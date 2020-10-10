@@ -10,10 +10,11 @@ from models.base_model import BaseModel
 from models.puesto import Puesto
 from models.partido import Partido
 from models.resultado import Resultado
+from models.comuna import Comuna
 from hashlib import md5
 
 classes = {"Candidato": Candidato, "BaseModel": BaseModel, "Puesto": Puesto,
-           "Partido": Partido, "Resultado": Resultado}
+           "Partido": Partido, "Resultado": Resultado, "Comuna": Comuna}
 
 
 class FileStorage:
