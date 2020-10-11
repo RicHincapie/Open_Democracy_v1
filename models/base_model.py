@@ -36,41 +36,65 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """ Initialization of BaseModel"""
+        """
+        print()
+        print("Kwargs: ")
+        print(kwargs)
+        """
         if kwargs:
+            # print("Yes, Kwargs")
             for key, value in kwargs.items():
                 if key != "__class__":
                     setattr(self, key, value)
+
             if kwargs.get("created_at", None) and type(self.created_at) is str:
                 self.created_at = datetime.strptime(kwargs["created_at"], time)
             else:
                 self.created_at = datetime.utcnow()
+            # Below code may be neccesary to avoid bug #1
+            """
+            if kwargs.get("updated_at", None) and type(self.updated_at) is str:
+                self.updated_at = datetime.strptime(kwargs["updated_at"], time)
+            else:
+                self.created_at = datetime.utcnow()
+            """
             # If any of our objects came without id.
             if kwargs.get("id", None) is None:
                 self.id = randint(10000, 20000)
         else:
+            """
+            print("Not, not Kwargs")
+            print()
+            """
             self.id = randint(10000, 20000)
             self.created_at = datetime.utcnow()
             self.updated_at = datetime.utcnow()
     
     def __str__(self):
         """String representation for all Clases"""
-        return "[{:s}] ({:s}) {}".format(self.__class__.__name__,
+        return "[{:s}] ({}) {}".format(self.__class__.__name__,
                                          self.id,
                                          self.__dict__)
 
     def save(self):
         """ Saves to storage and updates update_at attribute"""
         self.updated_at = datetime.utcnow()
-        models.storage.new(self)
+        models.storage.new(self) # Creates a new key:object in __objects
         models.storage.save()
 
     def to_dict(self):
         """ Converts the object to its dictionary representation"""
         new_copy = self.__dict__.copy()
-        if "created_at" in new_copy:
-            new_copy["created_at"] = new_copy["created_at"].strptime(time)
-        if "updated_at" in new_copy:
-            new_copy["updated_at"] = new_copy["updated_at"].strptime(time)
+        """
+        print("base_model to_dict() method new_copy:")
+        print(new_copy)
+        print(type(new_copy.get('updated_at')))
+        """
+        if "created_at" in new_copy and type(new_copy["created_at"]) is not str:
+            new_copy["created_at"] = new_copy["created_at"].strftime(time)
+        # The and below is important to avoid bug #1
+        if "updated_at" in new_copy and type(new_copy["updated_at"]) is not str: 
+            new_copy["updated_at"] = new_copy["updated_at"].strftime(time)
         new_copy["__class__"] = self.__class__.__name__
         return(new_copy)
     
