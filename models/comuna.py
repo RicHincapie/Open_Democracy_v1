@@ -22,7 +22,7 @@ class Comuna(BaseModel, Base):
         """Initializes Comuna"""
         super().__init__(*args, **kwargs)
     
-    if models.storage != "db":
+    if models.storage_t != "db":
         @property
         def puestos(self):
             """Getter for a list of puestos instances related to the Comuna"""
