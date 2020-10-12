@@ -4,7 +4,7 @@
 import models
 from models.base_model import BaseModel, Base
 from models.puesto import Puesto
-from sqlalchemy import Column, JSON, String, Integer, ForeignKey
+from sqlalchemy import Column, JSON
 from sqlalchemy.orm import relationship
 
 

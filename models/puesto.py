@@ -4,7 +4,7 @@
 
 import models
 from models.base_model import BaseModel, Base 
-from sqlalchemy import Column, String, ForeignKey, Integer, Float
+from sqlalchemy import Column, String, ForeignKey, SmallInteger, Float
 
 
 
@@ -12,7 +12,7 @@ class Puesto(BaseModel, Base):
     """Representation of a Puesto de votación"""
     if models.storage_t == "db":
         __tablename__ = 'puestos'
-        comuna_id = Column(Integer, ForeignKey('comunas.id'), nullable=False)
+        comuna_id = Column(SmallInteger(1), ForeignKey('comunas.id'), nullable=False)
         nombre = Column(String(128), nullable=False)
         latitude = Column(Float, nullable=False) # Not sure if Float must be only 1
         longitude = Column(Float, nullable= False) # Not sure if Float must be only 1

@@ -15,7 +15,7 @@ Index:
 from datetime import datetime
 import models  #Imports all the models Puesto, Candidato, Partido and Resultado
 from random import randint
-from sqlalchemy import Column, Integer, DateTime
+from sqlalchemy import Column, Integer, DateTime, SmallInteger
 from sqlalchemy.ext.declarative import declarative_base
 
 time = "%Y-%m-%dT%H:%M:%S.%f" # Our time format
@@ -30,7 +30,7 @@ else:
 class BaseModel:
     """ Class from which all other classes are derived """
     if models.storage_t == "db":
-        id = Column(Integer, primary_key=True)
+        id = Column(SmallInteger(1), primary_key=True)
         created_at = Column(DateTime, default=datetime.utcnow)
         updated_at = Column(DateTime, default=datetime.utcnow)
 

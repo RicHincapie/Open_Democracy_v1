@@ -3,9 +3,7 @@
 from sqlalchemy.sql.sqltypes import Boolean
 import models
 from models.base_model import BaseModel, Base
-from os import getenv
-import sqlalchemy
-from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy import Column, String, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 
 
@@ -14,10 +12,9 @@ class Partido(BaseModel, Base):
     if models.storage_t == "db":
         __tablename__ = 'partidos'
         nombre = Column(String(128), nullable=False)
-        candidatos_id = relationship("Candidato",
-                              backref="id_partido",
-                              cascade="all, delete, delete-orphan")
+        candidatos_id = relationship("Candidato")
         movimiento = Column(Boolean)
+        firmas_mov = Column(Integer(1))
     else:
         nombre = "undefined"
         candidatos_id = []
