@@ -5,7 +5,7 @@ from sqlalchemy.sql.sqltypes import SmallInteger
 from models.base_model import BaseModel, Base
 from os import getenv
 import sqlalchemy
-from sqlalchemy import Column, String, ForeignKey, 
+from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 
