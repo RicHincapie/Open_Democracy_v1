@@ -17,13 +17,13 @@ DROP DATABASE IF EXISTS odem_dev_db;
 CREATE DATABASE odem_dev_db;
 
 -- Create users for database
-CREATE USER IF NOT EXISTS 'odem_dev'@'localhost';
-SET PASSWORD FOR 'odem_dev'@'localhost' = 'odem_dev_pwd';
-GRANT ALL ON odem_dev_db.* TO 'odem_dev'@'localhost';
-GRANT SELECT ON performance_schema.* TO 'odem_dev'@'localhost';
-CREATE USER IF NOT EXISTS 'odem_usr'@'localhost';
-SET PASSWORD FOR 'odem_usr'@'localhost' = 'odem_usr';
-GRANT SELECT ON odem_dev_db.* TO 'odem_usr'@'localhost';
+CREATE USER IF NOT EXISTS 'odem_dev';
+SET PASSWORD FOR 'odem_dev' = 'odem_dev_pwd';
+GRANT ALL ON odem_dev_db.* TO 'odem_dev';
+GRANT SELECT ON performance_schema.* TO 'odem_dev';
+CREATE USER IF NOT EXISTS 'odem_usr';
+SET PASSWORD FOR 'odem_usr' = 'odem_usr';
+GRANT SELECT ON odem_dev_db.* TO 'odem_usr';
 FLUSH PRIVILEGES;
 
 USE odem_dev_db;
