@@ -15,7 +15,7 @@ class Candidato(BaseModel, Base):
         __tablename__ = 'candidatos'
         nombre = Column(String(128), nullable=False)
         apellido = Column(String(128), nullable=False)
-        partido_id = Column(SmallInteger(1), ForeignKey('partidos.id'), nullable=False)
+        partido_id = Column(SmallInteger, ForeignKey('partidos.id'), nullable=False)
         resultados_id = relationship('Resultado')
         # Proposal to assure One to Many relationship (changed!)
         # resultados_id = Column(String(128), nullable=False) (JCs code)
