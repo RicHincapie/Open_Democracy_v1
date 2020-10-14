@@ -17,10 +17,6 @@ DROP DATABASE IF EXISTS odem_dev_db;
 CREATE DATABASE odem_dev_db;
 
 -- Create users for database
-CREATE USER IF NOT EXISTS 'odem_dev';
-SET PASSWORD FOR 'odem_dev' = 'odem_dev_pwd';
-GRANT ALL ON *.* TO 'odem_dev';
-GRANT SELECT ON performance_schema.* TO 'odem_dev';
 CREATE USER IF NOT EXISTS 'odem_usr';
 SET PASSWORD FOR 'odem_usr' = 'odem_usr';
 GRANT SELECT ON *.* TO 'odem_usr';
