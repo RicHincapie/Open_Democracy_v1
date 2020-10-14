@@ -19,11 +19,11 @@ CREATE DATABASE odem_dev_db;
 -- Create users for database
 CREATE USER IF NOT EXISTS 'odem_dev';
 SET PASSWORD FOR 'odem_dev' = 'odem_dev_pwd';
-GRANT ALL ON odem_dev_db.* TO 'odem_dev';
+GRANT ALL ON *.* TO 'odem_dev';
 GRANT SELECT ON performance_schema.* TO 'odem_dev';
 CREATE USER IF NOT EXISTS 'odem_usr';
 SET PASSWORD FOR 'odem_usr' = 'odem_usr';
-GRANT SELECT ON odem_dev_db.* TO 'odem_usr';
+GRANT SELECT ON *.* TO 'odem_usr';
 FLUSH PRIVILEGES;
 
 USE odem_dev_db;
@@ -39,8 +39,8 @@ CREATE TABLE `partidos` (
     `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `nombre` VARCHAR(128),
     -- Does not have candidatos_id column. Apparently it doesn`t need it 
-    `movimiento` TINYINT(1),
-    `firmas_mov` INT(1),
+    `movimiento` TINYINT,
+    `firmas_mov` INT,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -58,7 +58,7 @@ CREATE TABLE `partidos` (
 
 DROP TABLE IF EXISTS `candidatos`;
 CREATE TABLE `candidatos` (
-    `id` smallint,
+    `id` smallint NOT NULL,
     `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `nombre` varchar(128),
@@ -85,7 +85,7 @@ CREATE TABLE `candidatos` (
 
 DROP TABLE IF EXISTS `comunas`;
 CREATE TABLE `comunas` (
-    `id` smallint(1) NOT NULL,
+    `id` smallint NOT NULL,
     `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     -- Does not have puestos_id column. Apparently it doesn`t need it 
@@ -107,13 +107,13 @@ CREATE TABLE `comunas` (
 
 DROP TABLE IF EXISTS `puestos`;
 CREATE TABLE `puestos` (
-    `id` smallint(1) NOT NULL,
+    `id` smallint NOT NULL,
     `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `nombre` varchar(128) NOT NULL,
-    `comuna_id` smallint(1) NOT NULL, -- Parent for CONSTRAINT
-    `latitude` float(1) NOT NULL,
-    `longitude` float(1) NOT NULL,
+    `comuna_id` smallint NOT NULL, -- Parent for CONSTRAINT
+    `latitude` float NOT NULL,
+    `longitude` float NOT NULL,
     PRIMARY KEY (`id`),
     KEY `comuna_id` (`comuna_id`),
     CONSTRAINT `puestos_comuna_id` FOREIGN KEY (`comuna_id`) REFERENCES `comunas` (`id`)
@@ -133,13 +133,13 @@ CREATE TABLE `puestos` (
 
 DROP TABLE IF EXISTS `resultados`;
 CREATE TABLE `resultados` (
-    `id` smallint(1) NOT NULL,
+    `id` smallint NOT NULL,
     `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `candidato_id` smallint(1) NOT NULL, -- Parent for CONSTRAINT
-    `puesto_id` smallint(1) NOT NULL, -- Parent for CONSTRAINT
-    `votos` smallint(1) NOT NULL, 
-    `partido_id` smallint(1) NOT NULL, -- Parent for CONSTRAINT
+    `candidato_id` smallint NOT NULL, -- Parent for CONSTRAINT
+    `puesto_id` smallint NOT NULL, -- Parent for CONSTRAINT
+    `votos` smallint NOT NULL, 
+    `partido_id` smallint NOT NULL, -- Parent for CONSTRAINT
     PRIMARY KEY (`id`),
     KEY `candidato_id` (`candidato_id`),
     KEY `puesto_id` (`puesto_id`),
