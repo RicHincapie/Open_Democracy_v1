@@ -14,7 +14,7 @@ class Partido(BaseModel, Base):
         nombre = Column(String(128), nullable=False)
         candidatos_id = relationship("Candidato")
         movimiento = Column(Boolean)
-        firmas_mov = Column(Integer(1))
+        firmas_mov = Column(Integer)
     else:
         nombre = "undefined"
         candidatos_id = []
