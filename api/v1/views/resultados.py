@@ -17,9 +17,12 @@ def get_resultados():
         Obtiene la lista de todos los objetos tipo Resultado
     """
     all_resultados = storage.all(Resultado).values()
+    print("OUR TEST")
+    print(all_resultados[0])
     list_resultados = []
     for resultado in all_resultados:
         list_resultados.append(Resultado.to_dict())
+    print("Salió!")
     return jsonify(list_resultados)
 
 
@@ -29,7 +32,7 @@ def get_Resultado(Resultado_id):
     """ 
         Obtiene un Resultado en especifico 
     """
-    Resultado = storage.get(Resultado, Resultado_id)
+    resultado = storage.get(Resultado, Resultado_id)
     if not Resultado:
         abort(404)
 
