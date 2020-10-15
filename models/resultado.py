@@ -4,16 +4,17 @@
 
 import models
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, String, Integer, ForeignKey
+from sqlalchemy import Column, SmallInteger, ForeignKey
 
 
 class Resultado(BaseModel, Base):
     """Representation of Resultado """
     if models.storage_t == "db":
-        candidato_id = Column(Integer, ForeignKey('candidatos.id'))
-        puesto_id = Column(Integer, ForeignKey('puestos.id'))
-        votos = Column(Integer)
-        partido_id = Column(Integer, ForeignKey('partidos.id'))
+        __tablename__ = 'resultados'
+        candidato_id = Column(SmallInteger, ForeignKey('candidatos.id'))
+        puesto_id = Column(SmallInteger, ForeignKey('puestos.id'))
+        partido_id = Column(SmallInteger, ForeignKey('partidos.id'))
+        votos = Column(SmallInteger)
     
     else: 
         candidato_id = 0
