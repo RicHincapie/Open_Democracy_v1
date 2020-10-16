@@ -8,18 +8,21 @@ from models.partido import Partido
 from models.comuna import Comuna
 from models import storage
 from api.v1.views import app_views
-from flask import jsonify, request, abort
+from flask import jsonify, request, abort, make_response
+from flasgger.utils import swag_from
 
 classes = [Candidato, Comuna, Partido, Puesto, Resultado]
 names = ["candidatos", "comunas", "partidos", "puestos", "resultados"]
 
 @app_views.route('/status', methods=['GET'], strict_slashes=False)
+@swag_from('documentation/Index/status.yml', methods=['GET'])
 def status():
     """ Status of API """
     return jsonify({"status": "OK"})
 
 
 @app_views.route('/stats', methods=['GET'], strict_slashes=False)
+@swag_from('documentation/Index/number_objects.yml', methods=['GET'])
 def number_objects():
     """ Retrieves the number of each objects by type """
 
@@ -29,53 +32,49 @@ def number_objects():
 
     return jsonify(num_objs)
 
-@app_views.route('/resultados/<int:Resultado_id>', methods=['GET'], strict_slashes=False)
-def get_Resultado(Resultado_id):
-    """ 
-        Obtiene un Resultado en especifico 
+
+@app_views.route('/<int:id_req_front>', methods=['GET'], strict_slashes=False)
+@swag_from('documentation/Index/get_resultado_candidato.yml', methods=['GET'])
+def get_resultado_candidato(id_req_front):
     """
-    resultado = storage.get(Resultado, Resultado_id)
-    if not resultado:
-        abort(404)
-    print("In Index def_Resultado: ")
-    print(resultado)
-    new_result = resultado.to_dict()
-    """ New result looks like this
-    [Resultado] (32) {'puesto_id': 13, 'id': 32, 'created_at': datetime.datetime(2020, 10, 13, 15, 31, 58),
-                      'partido_id': 999, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f577036f9b0>,
-                      'votos': 8, 'updated_at': datetime.datetime(2020, 10, 13, 15, 31, 58), 'candidato_id': 997}
-    Jsonify cannot convert the value for the '_sa_instance_state' key, since it is a SQLAlchemy ORM mapper.
-    Solution: delete the key:value of AQLAlchemy ORM mapper from dic.  
+        Retrieves the results of votes of candidates by puestos
     """
-    new_result.pop('_sa_instance_state') 
-    return jsonify(new_result)
+    new_resultado = {}
 
-"""
-@app_views.route('/resultados', methods=['GET'], strict_slashes=False)
-def get_resultados():
+    all_resultados = storage.all(Resultado)
+    all_puestos = storage.all(Puesto)
+    
+    our_candidato = storage.get(Candidato, id_req_front)
+  
+    for key, value in all_resultados.items():
+        if value.candidato_id == id_req_front:
+            new_resultado.update({key:value})
 
-        Obtiene la lista de todos los objetos tipo Resultado
+    final_json = {"type": "FeatureCollection", "features": []}
 
-    all_resultados = storage.all(Resultado).values()
-    list_resultados = []
-    for resultado in all_resultados:
-        list_resultados.append(resultado.to_dict())
-    return jsonify(list_resultados)
+    our_features = []
 
+    for resultado in new_resultado.values():
+        new_feature = {"type": "Feature", "properties": {"votos": 0, "candidato_id": 0, "nombre_cand": "undefined", "comuna_id": 0}, "geometry": {"type": "Point", "coordinates": []}}
+        new_feature['properties']['votos'] = resultado.votos
+        new_feature['properties']['candidato_id'] = resultado.candidato_id
 
-@app_views.route('/resultados', methods=['POST'], strict_slashes=False)
-def post_Resultado():
+        id_puesto = resultado.puesto_id
+        ref_puesto = "Puesto." + str(id_puesto)
+        our_puesto = all_puestos.get(ref_puesto)
 
-        Crea un Resultado
+        coords = []
+        coords.append(our_puesto.latitude)
+        coords.append(our_puesto.longitude)
 
-    if not request.get_json():
-        abort(400, description="Not a JSON")
+        new_feature['geometry']['coordinates'] = coords
+        new_feature['properties']['comuna_id'] = our_puesto.comuna_id
+        our_can_name = str(our_candidato.nombre) + " " + str(our_candidato.apellido)
 
-    if 'name' not in request.get_json():
-        abort(400, description="Missing name")
+        new_feature['properties']['nombre_cand'] = our_can_name
 
-    data = request.get_json()
-    instance = Resultado(**data)
-    instance.save()
-    return make_response(jsonify(instance.to_dict()), 201)
-"""
+        our_features.append(new_feature)
+
+    final_json['features'] = our_features
+    
+    return make_response(jsonify(final_json), 200)

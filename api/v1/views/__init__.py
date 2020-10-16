@@ -10,4 +10,4 @@ from api.v1.views.index import *
 #from api.v1.views.comunas import *
 #from api.v1.views.partidos import *
 #from api.v1.views.puestos import *
-#from api.v1.views.resultados import *
+from api.v1.views.resultados import *

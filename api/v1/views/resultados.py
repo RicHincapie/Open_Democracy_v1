@@ -11,37 +11,47 @@ from flasgger.utils import swag_from
 
 
 @app_views.route('/resultados', methods=['GET'], strict_slashes=False)
-@swag_from('documentation/Resultado/get_Resultado.yml', methods=['GET'])
+@swag_from('documentation/resultado/get_resultados.yml', methods=['GET'])
 def get_resultados():
     """
         Obtiene la lista de todos los objetos tipo Resultado
     """
     all_resultados = storage.all(Resultado).values()
-    print("OUR TEST")
-    print(all_resultados[0])
     list_resultados = []
     for resultado in all_resultados:
-        list_resultados.append(Resultado.to_dict())
-    print("Salió!")
+        delattr(resultado, '_sa_instance_state')
+        list_resultados.append(resultado.to_dict())
+
+   
     return jsonify(list_resultados)
 
 
-@app_views.route('/resultados/<Resultado_id>', methods=['GET'], strict_slashes=False)
-@swag_from('documentation/Resultado/get_id_Resultado.yml', methods=['get'])
+@app_views.route('/resultados/<int:Resultado_id>', methods=['GET'], strict_slashes=False)
+@swag_from('documentation/resultado/get_resultado.yml', methods=['GET'])
 def get_Resultado(Resultado_id):
     """ 
         Obtiene un Resultado en especifico 
     """
     resultado = storage.get(Resultado, Resultado_id)
-    if not Resultado:
+    if not resultado:
         abort(404)
-
-    return jsonify(Resultado.to_dict())
+    print("In Index def_Resultado: ")
+    print(resultado)
+    new_result = resultado.to_dict()
+    """ New result looks like this
+    [Resultado] (32) {'puesto_id': 13, 'id': 32, 'created_at': datetime.datetime(2020, 10, 13, 15, 31, 58),
+                      'partido_id': 999, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f577036f9b0>,
+                      'votos': 8, 'updated_at': datetime.datetime(2020, 10, 13, 15, 31, 58), 'candidato_id': 997}
+    Jsonify cannot convert the value for the '_sa_instance_state' key, since it is a SQLAlchemy ORM mapper.
+    Solution: delete the key:value of AQLAlchemy ORM mapper from dic.  
+    """
+    new_result.pop('_sa_instance_state') 
+    return jsonify(new_result)
 
 
 @app_views.route('/resultados/<Resultado_id>', methods=['DELETE'],
                  strict_slashes=False)
-@swag_from('documentation/Resultado/delete_Resultado.yml', methods=['DELETE'])
+@swag_from('documentation/resultado/delete_Resultado.yml', methods=['DELETE'])
 def delete_Resultado(Resultado_id):
     """
         Elimina un objeto de resultado
@@ -59,7 +69,7 @@ def delete_Resultado(Resultado_id):
 
 
 @app_views.route('/resultados', methods=['POST'], strict_slashes=False)
-@swag_from('documentation/Resultado/post_Resultado.yml', methods=['POST'])
+@swag_from('documentation/resultado/post_Resultado.yml', methods=['POST'])
 def post_Resultado():
     """
         Crea un Resultado
@@ -77,7 +87,7 @@ def post_Resultado():
 
 
 @app_views.route('/resultados/<Resultado_id>', methods=['PUT'], strict_slashes=False)
-@swag_from('documentation/Resultado/put_Resultado.yml', methods=['PUT'])
+@swag_from('documentation/resultado/put_Resultado.yml', methods=['PUT'])
 def put_Resultado(Resultado_id):
     """
         Actualiza un Resultado
