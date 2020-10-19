@@ -7,11 +7,11 @@
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
   
-  <script type="text/javascript" src="comunas3.js"></script>
+  <script type="text/javascript" src="puestosdef.js"></script>
   <script type="text/javascript" src="comunas_parte1.js"></script>
-  <script type="text/javascript" src="puestos2.js"></script>
-  <script type="text/javascript" src="barrio.js"></script>
-  <script type="text/javascript" src="comunasmy.js"></script>
+  <script type="text/javascript" src="Votos.js"></script>
+  <script type="text/javascript" src="bario.js"></script>
+  <script type="text/javascript" src="Comunas.js"></script>
   
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://libs.cartocdn.com/carto-vl/v1.4.4/carto-vl.min.js"></script>
@@ -41,19 +41,54 @@
             <li onclick="setComunas()">
               <input type="checkbox" id="comunas">
               <label for="comunas">Comunas</label>
+            
+             
             </li>
+            <li onclick="set_vot_by_comuna()">
+              <input type="checkbox" id="vot_comuna">
+              <label for="comunas">votos por Comuna</label>
+            </li>
+
             <li onclick="setNeighborhood()">
               <input type="checkbox" id="Neighborhood">
               <label for="barrios">Barrios</label>
             </li>
-            <li onclick="setCandidate()">
-              <input type="checkbox" id="candidate" checked>
-              <label for="candidato">Candidato</label>
-            </li>
+           
             <li onclick="setPlace()">
               <input type="checkbox" id="place">
               <label for="place">Puesto de votacion</label>
             </li>
+            <h4>seleccione rango:</h4>
+            
+            <li onclick="setCandidate()">
+              <input type="checkbox" id="candidate" checked>
+              <label for="candidato">votos obtenidos por el Candidato</label>
+            </li>
+            <li>
+              <input type="radio" name="style" onclick="setAll()" id="all" checked>
+              <label for="all">todos</label>
+        </li>
+        <li>
+              <input type="radio" name="style" onclick="setMin()" id="minimo">
+              <label for="minimo">de 0 a 20 votos</label>
+        </li>
+        <li>
+            <input type="radio" name="style" onclick="setMed()" id="medium">
+            <label for="medium">de 20 a 50 votos</label>
+        </li>
+        <li>
+            <input type="radio" name="style" onclick="sethight()" id="hight">
+            <label for="hight">de 50 a 100 votos</label>
+        </li>
+        <li>
+            <input type="radio" name="style" onclick="sethihgest()" id="hihgest">
+            <label for="hihgest">mas de 100 votos</label>
+        </li>
+        <!--li>
+          <input type="radio" name="style" onclick="set_voto_comuna()" id="voto_comuna">
+          <label for="minimo">votos por comuna</label>
+        </li-->
+
           </ul>   
       </section>
       
@@ -65,7 +100,7 @@
   </aside>
 
   <!-- script with map and layers -->
-  
+  <!--voyager darkmatter-->
     <script class="screen">
       const map = new mapboxgl.Map({
         container: 'map',
@@ -89,55 +124,143 @@
       const s = carto.expressions;
 
 
+//////////////////////////////////////
+    
       // source-layers  declaration //
 
+      // -- comunas layers --//
+
       const source1 = new carto.source.GeoJSON(com);
- 
+      
       const viz = new carto.Viz(`
        color: opacity(yellow, 0.2)
        strokeColor: black
        style: ramp(linear($votos,10),[#FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
-      `);
+      `);   
       const layer = new carto.Layer('comunas4', source1, viz);
-      const source2 = new carto.source.GeoJSON(votos);
 
+      // cloropleth comunas //
+
+      const viz_com_cloro = new carto.Viz(`
+       strokeColor: black
+       
+       @style: ramp(linear($comuna,10),[#FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+       color: opacity(@style, 0.5)
+      
+       `);   
+      const layer_vot_com = new carto.Layer('comunas4', source1, viz_com_cloro);
+
+       
+      //// --
+
+      
+      /// --- viz definition to implement  - filter -- //
+
+      const source2 = new carto.source.GeoJSON(votos);
      // width ; @votos
      //symbol: image('https://cartodb-libs.global.ssl.fastly.net/cartodbui/assets/unversioned/images/alphamarker.png')
-      const viz2 = new carto.Viz(`
+      
+      const vizAll = new carto.Viz(`
         @Name: $Name
-        @votos: ($votos) / 0.4
+        @votos: ($votos) / 0.1
         @style: ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
-        width: @votos
-        color: opacity(@style, 0.8)
+        width: @votos / 2
+        color: opacity(@style, 0.5)
         strokeWidth: 0.5
-        strokeColor: opacity(@style, 0.4)
+        strokeColor: opacity(@style, 0.9)
+        
+      `);
+      const layerAll = new carto.Layer('puestos', source2, vizAll);
+      
+      //  de 0 a 20
+      //@style: ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+      
+      const minViz = new carto.Viz(`
+        @Name: $Name
+
+        @votos: $votos / 0.1
+        @style:ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+        filter: between(@votos, 0, 20)
+        width: @votos / 2
+        color: opacity(@style, 0.5)
+        strokeWidth: 1
+        strokeColor: opacity(@style, 0.9)
 
       `);
-    const layer2 = new carto.Layer('puestos', source2, viz2);
+      
+      const layermin = new carto.Layer('puestos1', source2, minViz);
 
+      //  de 20 a 50
+      const medViz = new carto.Viz(`
+        
+        @Name: $Name
 
-    const source3 = new carto.source.GeoJSON(votos);
-
-      const viz3 = new carto.Viz(`
-        width: 5
-        color: opacity(black, 0.1)
-        strokeWidth: 0.5
-        strokeColor: #191970
-
+        @votos: $votos / 0.1
+        @style:ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+        filter: between(@votos, 21, 50)
+        width: @votos / 2
+        color: opacity(@style, 0.5)
+        strokeWidth: 1
+        strokeColor: opacity(@style, 0.9)
       `);
-    const layer3 = new carto.Layer('barrios', source3, viz3);
+      const layermed = new carto.Layer('puestos', source2, medViz);
 
-    const source4 = new carto.source.GeoJSON(votos);
+      // de 50 a 100
+      const hiViz = new carto.Viz(`
+        @Name: $Name
 
-      const viz4 = new carto.Viz(`
-        width: 10
-        color: black
-        strokeWidth: 0.5
-        strokeColor: #191970
-
+        @votos: $votos / 0.1
+        @style:ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+        filter: between(@votos, 50, 100)
+        width: @votos / 2
+        color: opacity(@style, 0.5)
+        strokeWidth: 1
+        strokeColor: opacity(@style, 0.9)
       `);
-    const layer4 = new carto.Layer('barrios', source4, viz4);
+      const layerhight = new carto.Layer('puestos', source2, hiViz);
 
+        // mas de 100
+      const higestViz = new carto.Viz(`
+        @Name: $Name
+
+        @votos: $votos / 0.1
+        @style:ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+        filter: between(@votos, 100, 300)
+        width: @votos / 2
+        color: opacity(@style, 0.5)
+        strokeWidth: 1
+        strokeColor: opacity(@style, 0.9)
+      `);
+      
+      const layerhihgest = new carto.Layer('puestos', source2, higestViz);
+        
+      //   ------- //- votes end //  ---- ////
+
+     
+     
+     
+      const source3 = new carto.source.GeoJSON(Barrios);
+      //opacity(black, 0.1)
+        const viz3 = new carto.Viz(`
+          width: 5
+          color: opacity(blue, 0.02)
+          strokeWidth: 1
+          strokeColor: black
+          
+        `);
+      const layer3 = new carto.Layer('barrio', source3, viz3);     
+        
+      const source4 = new carto.source.GeoJSON(puestosdef);
+        
+        const viz4 = new carto.Viz(`
+          width: 5
+          color: opacity(black, 0.2)
+          strokeWidth: 0.5
+          strokeColor: #191970
+          
+        `);
+      const layer4 = new carto.Layer('barrios', source4, viz4);
+     
 
       function setComunas() {
         if($("#comunas").is(':checked')) {
@@ -146,10 +269,10 @@
          }else{
           console.log('nothing')
           layer.remove()
-         }
+         }  
       }
-
-
+    
+    
       function setNeighborhood() {
         if($("#Neighborhood").is(':checked')) {
           layer3.addTo(map, 'watername_ocean');
@@ -157,65 +280,100 @@
          }else{
           console.log('nothing')
           layer3.remove()
-         }
-
+         }  
+      
       }
 
-      layer2.addTo(map, 'watername_ocean');
+
+
+      // ----  candidates layer and filters ---- ///
+
+      layerAll.addTo(map, 'watername_ocean');
       function setCandidate() {
-        if($("#candidate").is(':checked')) {
-          layer2.addTo(map, 'watername_ocean');
-          console.log('checked')
-
-          const interactivity = new carto.Interactivity(layer2);
+        if($("#candidate").is(':checked') && $("#all").is(':checked')) {
+              
+          layerAll.addTo(map, 'watername_ocean');
+          console.log('candidate and all  checked')
+        
+          const interactivity = new carto.Interactivity(layerAll);
           interactivity.on('featureHover', updateVotes)
-          function updateVotes(event) {
+          // updateVotes();                      
+        
+        }else if ($("#candidate").is(':checked') && $("#minimo").is(':checked')) {
+          layermin.addTo(map, 'watername_ocean');
+          console.log('candidate and min checked')
+          const interactivity = new carto.Interactivity(layermin);
+          interactivity.on('featureHover', updateVotes)
+          // updateVotes();
+        
+        }else if ($("#candidate").is(':checked') && $("#medium").is(':checked')) {
+          layermed.addTo(map, 'watername_ocean');
+          console.log('candidate and medium checked')
+          const interactivity = new carto.Interactivity(layermed);
+          interactivity.on('featureHover', updateVotes)
+          // updateVotes();
+        
+        }else if ($("#candidate").is(':checked') && $("#hight").is(':checked')) {
+          layerhight.addTo(map, 'watername_ocean');
+          console.log('candidate and hight checked')
+          const interactivity = new carto.Interactivity(layerhight);
+          interactivity.on('featureHover', updateVotes)
+          // updateVotes();
+        
+        }else if ($("#candidate").is(':checked') && $("#hihgest").is(':checked')) {
+          layerhihgest.addTo(map, 'watername_ocean');
+          console.log('candidate and max checked')
+          const interactivity = new carto.Interactivity(layerhihgest);
+          interactivity.on('featureHover', updateVotes)
+          // updateVotes();              
+           
+        }else{
 
-      //popup
-        if (event.features.length > 0) {
-          const vars = event.features[0].variables;
-          popup.setHTML(`
-          <div>
-            <h3 class ="h4">votos por punto de votacion: </h3>
-            <h3 class ="open-sans"> ${vars.Name.value}</h3>
-            <p class="description open-sans">votos obtenidos:  ${vars.votos.value}</h3>
-          </div>
-          `);
-          popup.setLngLat([event.coordinates.lng, event.coordinates.lat]);
-          if (!popup.isOpen()) {
-            popup.addTo(map);
-          }
-        } else {
-            popup.remove();
-        }
-      }
-         }else{
-          console.log('nothing')
-          layer2.remove()
-         }
-      }
-
+        console.log('nothing')
+        layermin.remove()
+        layerAll.remove()
+        }  
+        
+      } 
+  
       function setPlace() {
         if($("#place").is(':checked')) {
           layer4.addTo(map, 'watername_ocean');
           console.log('checked')
-         }else{
+        }else{
           console.log('nothing')
           layer4.remove()
-         }
+        }  
       }
 
 
-       // define popup
-      const popup = new mapboxgl.Popup({
-          closeButton: false,
-          closeOnClick: false
-       });
 
-    const interactivity = new carto.Interactivity(layer2);
+      /// -----  cloropleth comunas ---///
+
+      function set_vot_by_comuna() {
+        if ($("#vot_comuna").is(':checked')) {
+          layer_vot_com.addTo(map, 'watername_ocean');
+          console.log('vote_by_comuna')
+          const interactivity = new carto.Interactivity(layer_vot_com);
+          interactivity.on('featureHover', updateVotes)
+        }else{
+          console.log('vot_by_con not checked')
+          layer_vot_com.remove()
+        }
+      }
+
+    
+    
+      // define popup
+    const popup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false
+    });
+       
+    const interactivity = new carto.Interactivity(layerAll);
     interactivity.on('featureHover', updateVotes)
      function updateVotes(event) {
-
+           
         //popup
         if (event.features.length > 0) {
           const vars = event.features[0].variables;
@@ -233,12 +391,44 @@
         } else {
             popup.remove();
         }
-
+      
       }
 
-      document.getElementById('content').innerHTML = content;
+      //document.getElementById('content').innerHTML = content;
+      /// popup
+      
+      /// end popup
 
+/// funciones de transicion y seleccion de filtros  ////
+  
+     function setMin() {
+       console.log('min checked')
+       //layer.blendToViz(minViz); -- peer: esta es funcion por defecto para transicion de filtros, causa conflicto 
+     }
+    
+     function setMed() {
+      console.log('med checked')
+      //layer.blendToViz(medViz);
+     }
+     function sethight() {
+      console.log('hight checked')
+       
+     }
+     function sethihgest() {
+      console.log('max checked')
+        
+     }
+      function setAll() {
+        console.log('all checked')
+
+    }
+   /* function set_voto_comuna() {
+      console.log('voto_comuna checked')
+    }*/
+
+        
     </script>
+  
 </body>
 
 </html>
