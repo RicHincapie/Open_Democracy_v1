@@ -35,7 +35,8 @@ class DBStorage:
                                       format(ODEM_MYSQL_USER,
                                              ODEM_MYSQL_PWD,
                                              ODEM_MYSQL_HOST,
-                                             ODEM_MYSQL_DB))
+                                             ODEM_MYSQL_DB),
+                                      pool_pre_ping=True)
         if ODEM_ENV == "test":
             Base.metadata.drop_all(self.__engine)
 
@@ -48,6 +49,7 @@ class DBStorage:
                 for obj in objs:
                     key = str(obj.__class__.__name__) + '.' + str(obj.id)
                     new_dict[key] = obj
+        print(new_dict)
         return (new_dict)
 
     def new(self, obj):
