@@ -37,7 +37,7 @@ def number_objects():
 @swag_from('documentation/Index/get_resultado_candidato.yml', methods=['GET'])
 def get_resultado_candidato(id_req_front):
     """
-        Retrieves the results of votes of candidates by puestos
+        Retrieves the results by puestos of a candidate with his/her ID
     """
     new_resultado = {}
 

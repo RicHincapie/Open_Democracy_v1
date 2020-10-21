@@ -27,16 +27,16 @@ class DBStorage:
     def __init__(self):
         """Instantiate a DBStorage object"""
         ODEM_MYSQL_USER = getenv('ODEM_MYSQL_USER')
-        if ODEM_MYSQL_USER is None:
+        if not ODEM_MYSQL_USER:
             ODEM_MYSQL_USER = "odem_usr"
         ODEM_MYSQL_PWD = getenv('ODEM_MYSQL_PWD')
-        if ODEM_MYSQL_PWD is None:
+        if not ODEM_MYSQL_PWD:
             ODEM_MYSQL_PWD = "odem_usr"
         ODEM_MYSQL_HOST = getenv('ODEM_MYSQL_HOST')
-        if ODEM_MYSQL_HOST is None:
+        if not ODEM_MYSQL_HOST:
             ODEM_MYSQL_HOST = "34.75.248.42"
         ODEM_MYSQL_DB = getenv('ODEM_MYSQL_DB')
-        if ODEM_MYSQL_DB is None:
+        if not ODEM_MYSQL_DB:
             ODEM_MYSQL_DB = "odem_dev_db"
         ODEM_ENV = getenv('ODEM_ENV')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
@@ -57,7 +57,6 @@ class DBStorage:
                 for obj in objs:
                     key = str(obj.__class__.__name__) + '.' + str(obj.id)
                     new_dict[key] = obj
-        print(new_dict)
         return (new_dict)
 
     def new(self, obj):

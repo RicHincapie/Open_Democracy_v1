@@ -67,13 +67,13 @@ def delete_Resultado(Resultado_id):
 
     return make_response(jsonify({}), 200)
 
-
+"""
 @app_views.route('/resultados', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/resultado/post_Resultado.yml', methods=['POST'])
 def post_Resultado():
-    """
+    
         Crea un Resultado
-    """
+    
     if not request.get_json():
         abort(400, description="Not a JSON")
 
@@ -84,7 +84,7 @@ def post_Resultado():
     instance = Resultado(**data)
     instance.save()
     return make_response(jsonify(instance.to_dict()), 201)
-
+"""
 
 @app_views.route('/resultados/<Resultado_id>', methods=['PUT'], strict_slashes=False)
 @swag_from('documentation/resultado/put_Resultado.yml', methods=['PUT'])
