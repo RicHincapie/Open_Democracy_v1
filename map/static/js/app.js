@@ -11,8 +11,8 @@ const {
 let num = 1;
 const URL = '../static/js/votosTotales.json';
 // const init_url = 'http://0.0.0.0:5005/api/v1/candidates_all';
-const init_url_map = 'http://0.0.0.0:5005/api/v1/1'
-const URL_PLACES = 'http://0.0.0.0:5005/api/v1/';
+const init_url_map = 'http://34.75.248.42/api/v1/2'
+const URL_PLACES = 'http://34.75.248.42/api/v1/';
 let {layer, layer2, layer3, layer4} = {};
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -45,8 +45,20 @@ function init (map) {
 
   getData(init_url_map)
   .then(data => {
-    layer2= printMap(data, map, num, layer2)
-    layer2.addTo(map);
+  console.log(data);
+  const sourcePlace = new carto.source.GeoJSON(data);
+  const vizPlace = new carto.Viz(`
+    @nombre_puesto: $nombre_puesto  
+    @votos: $votos
+    @style: ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+    width: 10
+    color: opacity(@style, 0.8)
+    strokeWidth: 0.5
+    strokeColor: opacity(@style, 0.4)
+  `);
+  layer2 = new carto.Layer(`puestos`, sourcePlace, vizPlace);
+  layer2.addTo(map);
+  createInteractivity(layer2, map);
   })
   .then(() => {
     getData(URL)
