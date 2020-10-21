@@ -87,7 +87,7 @@ def get_resultado_candidato(id_req_front):
 @app_views.route('/candidatesAll', methods=['GET'], strict_slashes=False)
 def get_all_candidates():
     """
-        Retrieves the results of votes of candidates by puestos
+        Get all candidates with the total votes
     """
     our_obj = []
     all_resultados = storage.all(Resultado)
