@@ -55,15 +55,17 @@ def get_resultado_candidato(id_req_front):
     our_features = []
 
     for resultado in new_resultado.values():
-        new_feature = {"type": "Feature", "properties": {"votos": 0, "candidato_id": 0, "nombreCand": "undefined", "nombre_puesto": "undifined","comuna_id": 0}, "geometry": {"type": "Point", "coordinates": []}}
+
+        new_feature = {"type": "Feature", "properties": {"votos": 0, "candidato_id": 0, "nombre_cand": "undefined", "comuna_id": 0, "nombre_puesto": "undefined"}, "geometry": {"type": "Point", "coordinates": []}}
+
         new_feature['properties']['votos'] = resultado.votos
         new_feature['properties']['candidato_id'] = resultado.candidato_id
 
         id_puesto = resultado.puesto_id
         ref_puesto = "Puesto." + str(id_puesto)
         our_puesto = all_puestos.get(ref_puesto)
+
         our_puesto_name = storage.get(Puesto, id_puesto)
-        print(our_puesto_name )
         new_feature['properties']['nombre_puesto'] = our_puesto_name.nombre
 
         coords = []
@@ -74,17 +76,19 @@ def get_resultado_candidato(id_req_front):
         new_feature['properties']['comuna_id'] = our_puesto.comuna_id
         our_can_name = str(our_candidato.nombre) + " " + str(our_candidato.apellido)
 
-        new_feature['properties']['nombreCand'] = our_can_name
+
+        new_feature['properties']['nombre_cand'] = our_can_name
 
         our_features.append(new_feature)
 
-   
+
     final_json['features'] = our_features
     
     return make_response(jsonify(final_json), 200)
 
 
-@app_views.route('/candidatesAll', methods=['GET'], strict_slashes=False)
+
+@app_views.route('/candidates_all', methods=['GET'], strict_slashes=False)
 def get_all_candidates():
     """
         Get all candidates with the total votes
@@ -115,6 +119,7 @@ def get_all_candidates():
                 objts['votos'] += value.votos
 
     return make_response(jsonify(our_obj), 200)
+
 
 
 
