@@ -1,0 +1,25 @@
+Obtiene la lista de todos los resultados
+---
+tags:
+  - Resultados
+responses:
+  200:
+    description: Successful request
+    schema:
+      type: array
+      items:
+        properties:
+          __class__:
+            type: string
+          candidato_id:
+            type: string
+            description: id del Candidato
+          puesto_id:
+            type: string
+            description: id del Puesto de Votación
+          partido_id:
+            type: string
+            description: Partido del Candidato
+          votos:
+            type: string
+            description: Número de votos x Candidato x Puesto
