@@ -1,6 +1,5 @@
 import UI from './UI.js';
 import * as dom from './dom.js';
-import { votos } from './Votos.js';
 import { com } from './Comunas.js';
 import { Barrios } from './Barrios.js';
 
@@ -10,8 +9,8 @@ const {
 } = dom;
 
 let num = 1;
-const URL = '../static/js/votosCandidatos.json';
-const init_url = 'http://0.0.0.0:5005/api/v1/candidatesAll';
+const URL = '../static/js/votosTotales.json';
+// const init_url = 'http://0.0.0.0:5005/api/v1/candidates_all';
 const init_url_map = 'http://0.0.0.0:5005/api/v1/1'
 const URL_PLACES = 'http://0.0.0.0:5005/api/v1/';
 let {layer, layer2, layer3, layer4} = {};
@@ -46,27 +45,17 @@ function init (map) {
 
   getData(init_url_map)
   .then(data => {
-    let sourcePuesto = new carto.source.GeoJSON(data)
-        const vizPuesto = new carto.Viz(`
-        @nombre_puesto: $nombre_puesto  
-        @votos: $votos
-        @style: ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
-        width: @votos / 20
-        color: opacity(@style, 0.8)
-        strokeWidth: 0.5
-        strokeColor: opacity(@style, 0.4)
-          `);
-        layer2 = new carto.Layer('votoPuesto', sourcePuesto, vizPuesto);
-        layer2.addTo(map);
+    layer2= printMap(data, map, num, layer2)
+    layer2.addTo(map);
   })
   .then(() => {
-    createInteractivity(layer2, map);
-    getData(init_url)
+    getData(URL)
     .then(data => {
+      console.log(data);
       const ui = new UI();
+      data = data.sort(ui.compare);
       ui.candidateSelect(data);
       ui.buildInformation(data, '');
-
       createLayers();
     })
   })
@@ -81,7 +70,7 @@ function init (map) {
     const urlFinal = `${URL_PLACES}${id}`;
   
     // get data for panel
-    getData(init_url)
+    getData(URL)
     .then(data => {
       const ui = new UI();
       ui.buildInformation(data, candidate);
@@ -161,8 +150,6 @@ function printMap (data, map, num, layerplace) {
 }
 
 function createLayers() {
-
-  //getData().then(users => myData = users);
   const source1 = new carto.source.GeoJSON(com);
   const viz = new carto.Viz(`
    color: opacity(yellow, 0.2)
@@ -171,7 +158,7 @@ function createLayers() {
   `);
   layer = new carto.Layer('comunas', source1, viz);
 
-  const sourceBarrios = new carto.source.GeoJSON(votos);
+  const sourceBarrios = new carto.source.GeoJSON(Barrios);
   const vizBarrios = new carto.Viz(`
     width: 5
     color: opacity(blue, 0.02)
@@ -180,17 +167,14 @@ function createLayers() {
   `);
   layer3 = new carto.Layer('barrios', sourceBarrios, vizBarrios);
 
-  //const id = select.options[select.selectedIndex].getAttribute('data-id')
-  //getData(`../static/js/Comunas.js`)
-  //.then(data => {
-    const sourceCominaCloro = new carto.source.GeoJSON(com);
-    const vizCominaCloro = new carto.Viz(`
+  const sourceCominaCloro = new carto.source.GeoJSON(com);
+  const vizCominaCloro = new carto.Viz(`
     strokeColor: black
     @style: ramp(linear($comuna,10),[#FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
     color: opacity(@style, 0.5)
     `);
-    layer4 = new carto.Layer('ComunaVotos', sourceCominaCloro, vizCominaCloro);
-  //})
+  layer4 = new carto.Layer('ComunaVotos', sourceCominaCloro, vizCominaCloro);
+
 }
 
 function createInteractivity(layer, map){
@@ -201,11 +185,6 @@ function createInteractivity(layer, map){
   
   const interactivity = new carto.Interactivity([layer]);
   interactivity.on('featureEnter', featureEvent => {
-    // featureEvent.features.forEach((feature) => {
-    //   const name = feature.variables.nombreCand.value;
-    //   const votos = feature.variables.votos.value;
-    //   console.log(`You have clicked on ${name} <br> votos: ${votos}`);
-    // });
     
     const feature = featureEvent.features[0];
     if (!feature) {
@@ -221,8 +200,8 @@ function createInteractivity(layer, map){
             `;
   
     popup.setLngLat([coords.lng, coords.lat]);
-      popup.setHTML(html)
-      popup.addTo(map);
+    popup.setHTML(html)
+    popup.addTo(map);
   
   });
    

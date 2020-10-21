@@ -78,7 +78,7 @@ export default class UI {
       }
     });
 
-    porcentageCandidate = Math.round((totalVotesCandidate / totalVotes) * 100);
+    porcentageCandidate = Math.round(((totalVotesCandidate / totalVotes) * 100) * 10) / 10;
 
     const isHigh = (accu, value) => accu.votos > value.votos ? accu : value;
     const isLow = (accu, value) => accu.votos < value.votos ? accu : value;
@@ -86,7 +86,7 @@ export default class UI {
     const resultHight = listCandidate.reduce(isHigh);
     const resultLow = listCandidate.reduce(isLow);
 
-    console.log(resultHight)
+    console.log(`${resultHight.nombre} === ${selectCandidate}`);
 
     this.removeClass([contentIcon, number, fill]);
 
@@ -100,7 +100,7 @@ export default class UI {
     number.textContent = `${porcentageCandidate}%`;
     ranking.textContent = `${position} Position`;
 
-    if (resultHight.candidate === selectCandidate) {
+    if (resultHight.nombre === selectCandidate) {
       contentIcon.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
 
       contentIcon.classList.add('good');
@@ -117,7 +117,7 @@ export default class UI {
         delay: 500,
         fill: 'forwards'
       });
-    } else if (resultLow.candidate === selectCandidate) {
+    } else if (resultLow.nombre === selectCandidate) {
       contentIcon.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
 
       contentIcon.classList.add('bad');
@@ -168,8 +168,7 @@ export default class UI {
       } else {
         selectClass = '';
       }
-
-      const porcentage = Math.round((el.votos / totalVotes) * 100);
+      const porcentage = Math.round(((el.votos / totalVotes) * 100) * 10) / 10;
       listPorsnt.push(porcentage);
 
       contentTable.innerHTML += `
