@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Democracy</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles/style.css">
+    <link rel="stylesheet"  type="text/css" href="../static/styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Load CARTO VL JS -->
+    <script src="https://cartodb-libs.global.ssl.fastly.net/carto.js/v4.2.0/carto.min.js"></script>
+    <script src="https://libs.cartocdn.com/carto-vl/v1.2.4/carto-vl.min.js"></script>
+    <!-- Load Mapbox GL -->
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://carto.com/developers/carto-vl/v1.4.4/examples/maps/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="btn-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </div>
+    <header>
+        <div class="contLogo">
+            <img src="../static/images/logo-final2.png" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a class = "active" href="#">Demo</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="containerMap">
+            <div id="map"></div>
+            <aside class="toolbox">
+                <div class="box">
+                  
+                  <section>
+                    <div id="controls">
+                      <div id="info">
+                        <h4>seleccione capas:</h4>
+                      </div>
+            
+                      <ul>
+                        <li id="contComunas">
+                          <input type="checkbox" id="comunas">
+                          <label for="comunas">Comunas</label>
+                        </li>
+                        <li id="contNeighborhood">
+                          <input type="checkbox" id="Neighborhood">
+                          <label for="barrios">Barrios</label>
+                        </li>
+                        <li id="contCandidate">
+                          <input type="checkbox" id="candidate" checked>
+                          <label for="candidato">Votos por puesto de votación</label>
+                        </li>
+                        <li id="contComunaVotos">
+                          <input type="checkbox" id="ComunaVotos">
+                          <label for="place">Votos por Comunas</label>
+                        </li>
+                      </ul>   
+                  </section>
+                  
+                  <br />
+                  
+                </div>
+              </aside>
+        </div>
+        
+        <div class="panelInfo">
+            <div class="handler">
+                <div class="line"></div>
+            </div>
+            <section class="content">
+                <label>Select a candidate</label>
+                <div>
+                    <select name="listCandidate" id="listCandidate">
+                      
+                    </select>
+                </div>
+                <h2 class="title">Information</h2>
+                <div class="hr"></div>
+                <div class="contSpinner">
+                    <div class="sk-fading-circle">
+                        <div class="sk-circle1 sk-circle"></div>
+                        <div class="sk-circle2 sk-circle"></div>
+                        <div class="sk-circle3 sk-circle"></div>
+                        <div class="sk-circle4 sk-circle"></div>
+                        <div class="sk-circle5 sk-circle"></div>
+                        <div class="sk-circle6 sk-circle"></div>
+                        <div class="sk-circle7 sk-circle"></div>
+                        <div class="sk-circle8 sk-circle"></div>
+                        <div class="sk-circle9 sk-circle"></div>
+                        <div class="sk-circle10 sk-circle"></div>
+                        <div class="sk-circle11 sk-circle"></div>
+                        <div class="sk-circle12 sk-circle"></div>
+                    </div>
+                </div>
+                <div class="infoCandidate">
+                    <div class="picture"></div>
+                    <div class="textInfo">
+                        <div class="icon">
+                            <div class="contentIcon">
+                            </div>
+                        </div>
+                        <div class="ranking">
+                            1 Position
+                        </div>
+                        <div class="allVotes">
+                            All votes: 1234
+                        </div>
+                        <div class="percentage">
+                            <div class="number">Votes: 55%</div>
+                            <div class="bar">
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contentTable">
+                    <h2>Table comparation</h2>
+                    <!-- stadistics with javascript -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <script src="../static/js/app.js" type="module"></script>
+</body>
+</html>

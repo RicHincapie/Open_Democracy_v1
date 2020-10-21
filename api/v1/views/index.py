@@ -55,13 +55,18 @@ def get_resultado_candidato(id_req_front):
     our_features = []
 
     for resultado in new_resultado.values():
-        new_feature = {"type": "Feature", "properties": {"votos": 0, "candidato_id": 0, "nombre_cand": "undefined", "comuna_id": 0}, "geometry": {"type": "Point", "coordinates": []}}
+
+        new_feature = {"type": "Feature", "properties": {"votos": 0, "candidato_id": 0, "nombre_cand": "undefined", "comuna_id": 0, "nombre_puesto": "undefined"}, "geometry": {"type": "Point", "coordinates": []}}
+
         new_feature['properties']['votos'] = resultado.votos
         new_feature['properties']['candidato_id'] = resultado.candidato_id
 
         id_puesto = resultado.puesto_id
         ref_puesto = "Puesto." + str(id_puesto)
         our_puesto = all_puestos.get(ref_puesto)
+
+        our_puesto_name = storage.get(Puesto, id_puesto)
+        new_feature['properties']['nombre_puesto'] = our_puesto_name.nombre
 
         coords = []
         coords.append(our_puesto.latitude)
@@ -71,13 +76,51 @@ def get_resultado_candidato(id_req_front):
         new_feature['properties']['comuna_id'] = our_puesto.comuna_id
         our_can_name = str(our_candidato.nombre) + " " + str(our_candidato.apellido)
 
+
         new_feature['properties']['nombre_cand'] = our_can_name
 
         our_features.append(new_feature)
 
+
     final_json['features'] = our_features
     
     return make_response(jsonify(final_json), 200)
+
+
+
+@app_views.route('/candidates_all', methods=['GET'], strict_slashes=False)
+def get_all_candidates():
+    """
+        Get all candidates with the total votes
+    """
+    our_obj = []
+    all_resultados = storage.all(Resultado)
+
+    for key, value in all_resultados.items():
+        
+        candidato = storage.get(Candidato, value.candidato_id)
+        if value.candidato_id == candidato.id:
+            new_resultado = {}
+            if 'id' not in new_resultado  and 'nombre' not in new_resultado:
+                new_resultado['id'] = value.candidato_id
+                new_resultado['nombre'] = candidato.nombre + " " + candidato.apellido
+                new_resultado['votos'] = 0
+
+                if (len(our_obj) == 0):
+                    our_obj.append(new_resultado)
+                else:
+                    result = list(filter(lambda d: d['id'] == new_resultado['id'], our_obj))
+                    if not result:
+                        our_obj.append(new_resultado)
+
+    for objts in our_obj:
+        for key, value in all_resultados.items():
+            if(objts['id'] == value.candidato_id):
+                objts['votos'] += value.votos
+
+    return make_response(jsonify(our_obj), 200)
+
+
 
 
 @app_views.route('/resultado/comunas/<int:id_req_front>', methods=['GET'], strict_slashes=False)
