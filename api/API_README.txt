@@ -13,6 +13,15 @@ ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 OD
 Usage
 --------
 
+Get Route to check the status
+curl -X GET http://0.0.0.0:5005/api/v1/status
+
+Get total number of each class elements of the database
+curl -X GET http://0.0.0.0:5005/api/v1/stats
+
+Get All resultados:
+curl -X GET http://0.0.0.0:5005/api/v1/resultados
+
 Bring a unique result by id <int>:
     curl -X GET http://0.0.0.0:5005/api/v1/resultados/<int>
 
