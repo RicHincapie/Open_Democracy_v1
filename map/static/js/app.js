@@ -8,12 +8,13 @@ const {
   btnMenu, select
 } = dom;
 
-let num = 1;
+let num = 0, numComun = 1;
 const URL = '../static/js/votosTotales.json';
 // const init_url = 'http://0.0.0.0:5005/api/v1/candidates_all';
-const init_url_map = 'http://34.75.248.42/api/v1/2'
-const URL_PLACES = 'http://34.75.248.42/api/v1/';
+const URL_PLACES = 'https://opendemocracy.digital/api/v1/'/*'http://0.0.0.0:5005/api/v1/'*/;
 let {layer, layer2, layer3, layer4} = {};
+let chekedPlace = true;
+let chekedComuna = false;
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -42,34 +43,37 @@ function init (map) {
   });
 
   const s = carto.expressions;
-
-  getData(init_url_map)
+  getData(URL)
   .then(data => {
-  console.log(data);
-  const sourcePlace = new carto.source.GeoJSON(data);
-  const vizPlace = new carto.Viz(`
-    @nombre_puesto: $nombre_puesto  
-    @votos: $votos
-    @style: ramp(linear($votos,1,5000),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
-    color: opacity(@style, 0.7)
-    width: 10
-    strokeWidth: 0.5
-    strokeColor: opacity(@style, 0.4)
-  `);
-  layer2 = new carto.Layer(`puestos`, sourcePlace, vizPlace);
-  layer2.addTo(map);
-  createInteractivity(layer2, map);
+   
+    const ui = new UI();
+    data = data.sort(ui.compare);
+    ui.candidateSelect(data);
+    ui.buildInformation(data, '');
+    createLayers(map);
+
+    const id = select.options[select.selectedIndex].getAttribute('data-id')
+    return id;
   })
-  .then(() => {
-    getData(URL)
+  .then((id) => {
+    const urlFinal = `${URL_PLACES}${id}`;
+    getData(urlFinal)
     .then(data => {
-      console.log(data);
-      const ui = new UI();
-      data = data.sort(ui.compare);
-      ui.candidateSelect(data);
-      ui.buildInformation(data, '');
-      createLayers();
+    const sourcePlace = new carto.source.GeoJSON(data);
+    const vizPlace = new carto.Viz(`
+      @nombre_puesto: $nombre_puesto  
+      @votos: $votos
+      @style: ramp(linear($votos,1,2500),[#311B92, #f35a27])
+      color: opacity(@style, 0.9)
+      width: 10
+      strokeWidth: 0.5
+      strokeColor: opacity(@style, 0.4)
+    `);
+    layer2 = new carto.Layer(`puestos`, sourcePlace, vizPlace);
+    layer2.addTo(map);
+    createInteractivity(layer2, map);
     })
+
   })
 
   select.addEventListener('change', function () {
@@ -87,15 +91,30 @@ function init (map) {
       const ui = new UI();
       ui.buildInformation(data, candidate);
     })
-    layer2.hide();
-    num++;
-
     //get data for map
     getData(urlFinal)
     .then(data => {
-      layer2= printMap(data, map, num, layer2);
-      layer2.addTo(map);
+      if (chekedPlace){
+        num++;
+        console.log(`init puestos${num}`)
+        layer2 = printMap(data, map, num, layer2);
+        layer2.addTo(map);
+      }
     })
+    if (chekedComuna) {
+      const id = select.options[select.selectedIndex].getAttribute('data-id');
+      const urlComunas = `http://34.75.248.42/api/v1/resultado/comunas/${id}`;
+      const temp = `http://0.0.0.0:5005/api/v1/resultado/comunas/${id}`;
+      getData(temp)
+      .then(data => {
+        layer4.hide();
+        layer4.remove();
+        layer4 = printMapComunasVotes(data, map, numComun, layer4);
+        numComun++;
+        layer4.addTo(map);
+        layer4.show();
+      })
+    }
     
   });
 
@@ -117,13 +136,26 @@ function init (map) {
       layer3.remove();
      }
   }); 
-  document.querySelector('#contComunaVotos').addEventListener('click', function() {
-    if(document.querySelector('#ComunaVotos').checked) {
-      layer4.addTo(map);
+  document.querySelector('#ComunaVotos').addEventListener('click', function() {
+    
+    if(document.querySelector('#ComunaVotos').checked) {  
       console.log('checked');
+      const id = select.options[select.selectedIndex].getAttribute('data-id')
+      const urlComunas = `http://34.75.248.42/api/v1/resultado/comunas/${id}`
+      const temp = `http://0.0.0.0:5005/api/v1/resultado/comunas/${id}`;
+      getData(temp)
+      .then(data => {
+        numComun++;
+        layer4 = printMapComunasVotes(data, map, numComun, layer4);
+        layer4.addTo(map);
+        layer4.show();
+      })
+      chekedComuna = true;
      }else{
       console.log('nothing');
+      layer4.hide();
       layer4.remove();
+      chekedComuna = false;
      }
   });
   document.querySelector('#contCandidate').addEventListener('click', function () {
@@ -131,33 +163,53 @@ function init (map) {
     if(document.querySelector('#candidate').checked) {
       layer2.addTo(map);
       layer2.show();
-      createInteractivity(layer2, map);
+      chekedPlace = true;
       console.log('checked');
     }else{
       console.log('nothing');
       layer2.hide();
       layer2.remove();
+      chekedPlace = false;
     }
   });
   
 }
 
 function printMap (data, map, num, layerplace) {
+  layerplace.hide();
   const sourcePlace = new carto.source.GeoJSON(data);
   const vizPlace = new carto.Viz(`
     @nombre_puesto: $nombre_puesto  
     @votos: $votos
-    @style: ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
-    @style: ramp(linear($votos,1,100),[red])
-    width: @votos/20
-    color: opacity(@style, 0.8)
+    @style: ramp(linear($votos,1,2500),[#311B92, #f35a27])
+    width: 10
+    color: opacity(@style, 0.9)
     strokeWidth: 0.5
     strokeColor: opacity(@style, 0.4)
   `);
+  console.log(`puestos${num}`)
   layerplace = new carto.Layer(`puestos${num}`, sourcePlace, vizPlace);
-  layerplace.addTo(map);
-
+  
   createInteractivity(layerplace, map);
+  
+  return layerplace;
+}
+
+function printMapComunasVotes (data, map, num, layerplace) {
+  
+  const sourceCominaCloro = new carto.source.GeoJSON(data);
+    const vizCominaCloro = new carto.Viz(`
+      @nombre: $nombre
+      @votos: $votos
+      @comuna: $comuna
+      strokeColor: black
+      width: 20
+      @style: ramp(linear($votos,1,20000),[#221f59, #f35a27, #FFB300])
+      color: opacity(@style, 0.8)
+      `);
+    layerplace = new carto.Layer(`ComunaVotos${num}`, sourceCominaCloro, vizCominaCloro);
+  
+  createInteractivityComuna(layerplace, map);
   
   return layerplace;
 }
@@ -180,18 +232,6 @@ function createLayers() {
   `);
   layer3 = new carto.Layer('barrios', sourceBarrios, vizBarrios);
 
-  // getData('http://34.75.248.42/api/v1/resultado/comunas/2')
-  // .then(data => {
-
-    const sourceCominaCloro = new carto.source.GeoJSON(com);
-    const vizCominaCloro = new carto.Viz(`
-      strokeColor: black
-      @style: ramp(linear($comuna,10),[#FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
-      color: opacity(@style, 0.5)
-      `);
-    layer4 = new carto.Layer('ComunaVotos', sourceCominaCloro, vizCominaCloro);
-  // })
-
 }
 
 function createInteractivity(layer, map){
@@ -210,18 +250,48 @@ function createInteractivity(layer, map){
     const coords = featureEvent.coordinates;
     const html = `
               <div id='popUp'>
-                <h3 class ="h4">votos por punto de votacion: </h3>
-                <h3 class ="open-sans">Lugar de votación: <br>${feature.variables.nombre_puesto.value}</h3>
+                <h3 class ="h4">votos por comuna: </h3>
+                <h3 class ="open-sans">${feature.variables.nombre_puesto.value}</h3>
                 <p class="description open-sans">votos obtenidos: <br> ${feature.variables.votos.value}</h3>
             </div>
             `;
-  
     popup.setLngLat([coords.lng, coords.lat]);
     popup.setHTML(html)
     popup.addTo(map);
   
   });
    
+  interactivity.on('featureLeave', () => {
+    popup.remove();
+  })
+}
+
+function createInteractivityComuna(layer, map){
+  const popup = new mapboxgl.Popup({
+    closeButton: false,
+    closeOnClick: false
+  });
+  const interactivity = new carto.Interactivity([layer]);
+  interactivity.on('featureEnter', featureEvent => {
+
+  const feature = featureEvent.features[0];
+  if (!feature) {
+    return;
+  }
+  const coords = featureEvent.coordinates;
+  const html = `
+                <div id='popUp'>
+                  <h3 class ="h4">votos por Comuna: </h3>
+                  <h3 class ="open-sans">Comuna: <br>${feature.variables.comuna.value}</h3>
+                  <p class="description open-sans">votos obtenidos: ${feature.variables.votos.value}</h3>
+              </div>
+              `;
+              
+  popup.setLngLat([coords.lng, coords.lat]);
+  popup.setHTML(html)
+  popup.addTo(map);
+    
+  });   
   interactivity.on('featureLeave', () => {
     popup.remove();
   })
