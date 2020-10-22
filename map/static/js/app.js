@@ -47,8 +47,20 @@ function init (map) {
 
   getData(init_url_map)
   .then(data => {
-    layer2= printMap(data, map, num, layer2)
-    layer2.addTo(map);
+  console.log(data);
+  const sourcePlace = new carto.source.GeoJSON(data);
+  const vizPlace = new carto.Viz(`
+    @nombre_puesto: $nombre_puesto  
+    @votos: $votos
+    @style: ramp(linear($votos,1,5000),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+    color: opacity(@style, 0.7)
+    width: 10
+    strokeWidth: 0.5
+    strokeColor: opacity(@style, 0.4)
+  `);
+  layer2 = new carto.Layer(`puestos`, sourcePlace, vizPlace);
+  layer2.addTo(map);
+  createInteractivity(layer2, map);
   })
   .then(() => {
     getData(URL)
@@ -138,6 +150,7 @@ function printMap (data, map, num, layerplace) {
     @nombre_puesto: $nombre_puesto  
     @votos: $votos
     @style: ramp(linear($votos,1,10),[blue, turquoise, #FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+    @style: ramp(linear($votos,1,100),[red])
     width: @votos/20
     color: opacity(@style, 0.8)
     strokeWidth: 0.5
@@ -169,13 +182,17 @@ function createLayers() {
   `);
   layer3 = new carto.Layer('barrios', sourceBarrios, vizBarrios);
 
-  const sourceCominaCloro = new carto.source.GeoJSON(com);
-  const vizCominaCloro = new carto.Viz(`
-    strokeColor: black
-    @style: ramp(linear($comuna,10),[#FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
-    color: opacity(@style, 0.5)
-    `);
-  layer4 = new carto.Layer('ComunaVotos', sourceCominaCloro, vizCominaCloro);
+  // getData('http://34.75.248.42/api/v1/resultado/comunas/2')
+  // .then(data => {
+
+    const sourceCominaCloro = new carto.source.GeoJSON(com);
+    const vizCominaCloro = new carto.Viz(`
+      strokeColor: black
+      @style: ramp(linear($comuna,10),[#FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
+      color: opacity(@style, 0.5)
+      `);
+    layer4 = new carto.Layer('ComunaVotos', sourceCominaCloro, vizCominaCloro);
+  // })
 
 }
 
