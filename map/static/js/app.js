@@ -11,8 +11,10 @@ const {
 let num = 1;
 const URL = '../static/js/votosTotales.json';
 // const init_url = 'http://0.0.0.0:5005/api/v1/candidates_all';
-const init_url_map = 'http://0.0.0.0:5005/api/v1/1'
-const URL_PLACES = 'http://0.0.0.0:5005/api/v1/';
+// Below we have our load balancer ready to handle requests to the API
+// in HTTPS
+const init_url_map = 'https://opendemocracy.digital/api/v1/1'
+const URL_PLACES = 'https://opendemocracy.digital/api/v1/';
 let {layer, layer2, layer3, layer4} = {};
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -209,9 +211,19 @@ function createInteractivity(layer, map){
     popup.remove();
   })
 }
-
+// Here we configure CORS
+// Origin in headers should correspond to the ip 
+// of the server from where the app.js is being
+// run. 
+// E.g.: for web-02 'Origin': 'http://184.72.156.146'' 
 async function getData(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    'mode': 'cors',
+    'method': 'GET',
+    'headers': {
+      'Origin': 'http://184.72.156.146'
+    }
+  });
   const date = await response.json()
   return date;
 }
