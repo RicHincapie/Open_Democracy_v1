@@ -265,7 +265,6 @@ function createInteractivity(layer, map){
     popup.remove();
   })
 }
-<<<<<<< HEAD
 
 function createInteractivityComuna(layer, map){
   const popup = new mapboxgl.Popup({
@@ -298,13 +297,6 @@ function createInteractivityComuna(layer, map){
   })
 }
 
-=======
-// Here we configure CORS
-// Origin in headers should correspond to the ip 
-// of the server from where the app.js is being
-// run. 
-// E.g.: for web-02 'Origin': 'http://184.72.156.146'' 
->>>>>>> 795aa6fa100ece65dd28675cca708a77187f6c1a
 async function getData(url) {
   const response = await fetch(url, {
     'mode': 'cors',
