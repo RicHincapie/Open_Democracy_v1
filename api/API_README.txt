@@ -23,10 +23,17 @@ Get All resultados:
 curl -X GET http://0.0.0.0:5005/api/v1/resultados
 
 Bring a unique result by id <int>:
-    curl -X GET http://0.0.0.0:5005/api/v1/resultados/<int>
+curl -X GET http://0.0.0.0:5005/api/v1/resultados/<int>
 
 Bring results by puesto with a candidate_id <int>:
-    curl -X GET http://0.0.0.0:5005/api/v1/<int>
+curl -X GET http://0.0.0.0:5005/api/v1/<int>
 
 Bring results by comunas with a candidate_id <int>:
-    curl -X GET http://0.0.0.0:5005/api/v1/resultado/comunas/<int> 
+curl -X GET http://0.0.0.0:5005/api/v1/resultado/comunas/<int> 
+
+
+Actual servers: 
+
+1516-web-01: 34.75.248.42	        Master Database
+1625-web-02: 184.72.156.146	        Slave Database	
+1516-lb-01: ubuntu	54.221.173.6    Load Balancer 
