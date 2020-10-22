@@ -86,7 +86,7 @@ export default class UI {
     const resultHight = listCandidate.reduce(isHigh);
     const resultLow = listCandidate.reduce(isLow);
 
-    console.log(`${resultHight.nombre} === ${selectCandidate}`);
+    // console.log(`${resultHight.nombre} === ${selectCandidate}`);
 
     this.removeClass([contentIcon, number, fill]);
 
