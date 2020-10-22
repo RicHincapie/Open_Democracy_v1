@@ -10,10 +10,11 @@ from models.base_model import BaseModel
 from models.puesto import Puesto
 from models.partido import Partido
 from models.resultado import Resultado
+from models.comuna import Comuna
 from hashlib import md5
 
 classes = {"Candidato": Candidato, "BaseModel": BaseModel, "Puesto": Puesto,
-           "Partido": Partido, "Resultado": Resultado}
+           "Partido": Partido, "Resultado": Resultado, "Comuna": Comuna}
 
 
 class FileStorage:
@@ -37,16 +38,28 @@ class FileStorage:
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
         if obj is not None:
-            key = obj.__class__.__name__ + "." + obj.id
+            key = obj.__class__.__name__ + "." + str(obj.id)
             self.__objects[key] = obj
 
     def save(self):
         """serializes __objects to the JSON file (path: __file_path)"""
+        """
+        print()
+        print("*" * 15)
+        print("FileStorage __objects: ")
+        print(self.__objects)
+        print()
+        """
         json_objects = {}
-        for key in self.__objects:
+        for key in self.__objects: # Walks through the actual objects to create a dict
             if key == "password":
                 json_objects[key].decode()
-            json_objects[key] = self.__objects[key].to_dict(save_fs=1)
+            """
+            print("Key from save() in FileStorage: ")
+            print(key)
+            print()
+            """
+            json_objects[key] = self.__objects[key].to_dict()  # Bug #1 starts here
         with open(self.__file_path, 'w') as f:
             json.dump(json_objects, f)
 
@@ -56,7 +69,8 @@ class FileStorage:
             with open(self.__file_path, 'r') as f:
                 jo = json.load(f)
             for key in jo:
-                self.__objects[key] = classes[jo[key]["__class__"]](**jo[key])
+                # Here is where Objects are instantiated from Json via kwargs
+                self.__objects[key] = classes[jo[key]["__class__"]](**jo[key]) 
         except:
             pass
 
