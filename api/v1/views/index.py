@@ -192,6 +192,6 @@ def get_resultado_comuna_candidato(id_req_front):
     # The below code works for adding the comunas data to the puestos data and
     # send all the information together
     
-    final_json['features'] = our_features
+    final_json['features'] = our_comunas
 
     return make_response(jsonify(final_json), 200)
