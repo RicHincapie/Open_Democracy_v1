@@ -12245,6 +12245,7 @@ export const com = {
         "properties": {
           "area": 10589124,
           "comuna": 22,
+          "votos": 5001,
           "nombre": "Comuna 22",
           "perimetro": 15552
         }
