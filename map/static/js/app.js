@@ -11,10 +11,11 @@ const {
 let num = 0, numComun = 1;
 const URL = '../static/js/votosTotales.json';
 // const init_url = 'http://0.0.0.0:5005/api/v1/candidates_all';
-const URL_PLACES = 'https://opendemocracy.digital/api/v1/'/*'http://0.0.0.0:5005/api/v1/'*/;
+const URL_PLACES = 'http://0.0.0.0:6005/api/v1/'/*'https://opendemocracy.digital/api/v1/'*/;
 let {layer, layer2, layer3, layer4} = {};
 let chekedPlace = true;
 let chekedComuna = false;
+let new_data; // Here we store return from the normalization functions.
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -43,10 +44,14 @@ function init (map) {
   });
 
   const s = carto.expressions;
+  
+  // Below the HTML is constructed to reflect the candidates
+  // position in function of their votes.
+  // getData() function fetches any argument it is inputed. 
   getData(URL)
   .then(data => {
    
-    const ui = new UI();
+    const ui = new UI(); // User interface Class connected with HTML handlers
     data = data.sort(ui.compare);
     ui.candidateSelect(data);
     ui.buildInformation(data, '');
@@ -56,16 +61,22 @@ function init (map) {
     return id;
   })
   .then((id) => {
+    // The API is consulted with the candidate_id to fetch 
+    // a dictionary with point coordinates, candidate name
+    // and number of votes, between other data.  
     const urlFinal = `${URL_PLACES}${id}`;
     getData(urlFinal)
     .then(data => {
-    const sourcePlace = new carto.source.GeoJSON(data);
+    new_data = normalizeData(data);
+    
+    // This call is for the page first load
+    const sourcePlace = new carto.source.GeoJSON(new_data);
     const vizPlace = new carto.Viz(`
       @nombre_puesto: $nombre_puesto  
       @votos: $votos
-      @style: ramp(linear($votos,1,2500),[#311B92, #f35a27])
+      @style: ramp(linear($votos,$carto_index_low,$carto_index_high),[#311B92, #f35a27])
       color: opacity(@style, 0.9)
-      width: 10
+      width: $carto_index
       strokeWidth: 0.5
       strokeColor: opacity(@style, 0.4)
     `);
@@ -75,7 +86,7 @@ function init (map) {
     })
 
   })
-
+  // Each time a different candidate is selected map needs to be recharged
   select.addEventListener('change', function () {
 
     const candidate = select.options[select.selectedIndex].value;
@@ -95,21 +106,23 @@ function init (map) {
     getData(urlFinal)
     .then(data => {
       if (chekedPlace){
+        new_data = normalizeData(data)
         num++;
         console.log(`init puestos${num}`)
-        layer2 = printMap(data, map, num, layer2);
+        layer2 = printMap(new_data, map, num, layer2);
         layer2.addTo(map);
       }
     })
     if (chekedComuna) {
       const id = select.options[select.selectedIndex].getAttribute('data-id');
-      const urlComunas = `http://34.75.248.42/api/v1/resultado/comunas/${id}`;
-      const temp = `http://0.0.0.0:5005/api/v1/resultado/comunas/${id}`;
+      const urlComunas = `https://opendemocracy.digital/api/v1/resultado/comunas/${id}`;
+      const temp = `http://0.0.0.0:6005/api/v1/resultado/comunas/${id}`;
       getData(temp)
       .then(data => {
+        new_data = normalizeDataCloropleth(data);
         layer4.hide();
         layer4.remove();
-        layer4 = printMapComunasVotes(data, map, numComun, layer4);
+        layer4 = printMapComunasVotes(new_data, map, numComun, layer4);
         numComun++;
         layer4.addTo(map);
         layer4.show();
@@ -141,12 +154,13 @@ function init (map) {
     if(document.querySelector('#ComunaVotos').checked) {  
       console.log('checked');
       const id = select.options[select.selectedIndex].getAttribute('data-id')
-      const urlComunas = `http://34.75.248.42/api/v1/resultado/comunas/${id}`
-      const temp = `http://0.0.0.0:5005/api/v1/resultado/comunas/${id}`;
+      const urlComunas = `https://opendemocracy.digital/api/v1/resultado/comunas/${id}`
+      const temp = `http://0.0.0.0:6005/api/v1/resultado/comunas/${id}`;
       getData(temp)
       .then(data => {
         numComun++;
-        layer4 = printMapComunasVotes(data, map, numComun, layer4);
+        new_data = normalizeDataCloropleth(data)
+        layer4 = printMapComunasVotes(new_data, map, numComun, layer4);
         layer4.addTo(map);
         layer4.show();
       })
@@ -172,8 +186,22 @@ function init (map) {
       chekedPlace = false;
     }
   });
-  
 }
+
+/*
+
+================================================
+            Functions definitions
+================================================
+- printMap
+- printMapComunasVotes
+- createLayers
+- createInteractivity
+- createInteractivityComuna
+- normalizeData
+- normalizeDataCloropleth
+
+*/
 
 function printMap (data, map, num, layerplace) {
   layerplace.hide();
@@ -193,8 +221,12 @@ function printMap (data, map, num, layerplace) {
   createInteractivity(layerplace, map);
   
   return layerplace;
-}
+};
 
+// Sends Comunas data to carto for Cloropleth graphics
+
+/* @style: ramp(linear(actual votes_min, vote_max), [colors, colors, colors])
+*/
 function printMapComunasVotes (data, map, num, layerplace) {
   
   const sourceCominaCloro = new carto.source.GeoJSON(data);
@@ -204,7 +236,7 @@ function printMapComunasVotes (data, map, num, layerplace) {
       @comuna: $comuna
       strokeColor: black
       width: 20
-      @style: ramp(linear($votos,1,20000),[#221f59, #f35a27, #FFB300])
+      @style: ramp(linear($votos,$carto_index_low,$carto_index_high),[#221f59, #f35a27, #FFB300])
       color: opacity(@style, 0.8)
       `);
     layerplace = new carto.Layer(`ComunaVotos${num}`, sourceCominaCloro, vizCominaCloro);
@@ -212,7 +244,7 @@ function printMapComunasVotes (data, map, num, layerplace) {
   createInteractivityComuna(layerplace, map);
   
   return layerplace;
-}
+};
 
 function createLayers() {
   const source1 = new carto.source.GeoJSON(com);
@@ -232,7 +264,7 @@ function createLayers() {
   `);
   layer3 = new carto.Layer('barrios', sourceBarrios, vizBarrios);
 
-}
+};
 
 function createInteractivity(layer, map){
   const popup = new mapboxgl.Popup({
@@ -309,3 +341,66 @@ async function getData(url) {
   return date;
 }
 
+/*
+normalizeData(data)
+Function to insert in each puesto property a key 'carto_index'
+with a index value between 10 and 40 that represents its weight
+to be the point size in Carto
+*/
+
+function normalizeData(data) {
+  let my_votes = [] // Takes the votes to run analysis. 
+  
+  data.features.forEach(function (item) {
+    my_votes.push(item.properties.votos);
+  });
+ 
+  my_votes.sort(function(a, b) {
+    return a - b;
+  });
+  // Range substracts lower voting to higher one
+  let carto_index_high = my_votes[my_votes.length - 1];
+  let carto_index_low = my_votes[0];
+
+  let range = (carto_index_high - carto_index_low);
+
+  // How many positions will be introduced to Carto. 
+  let carto_range = 29;
+  let bins_size = range / carto_range;
+  // Each feature gets a new key:value
+  data.features.forEach(function (item) {
+    item['properties']['carto_index'] = (Math.round(item.properties.votos / bins_size)) + 10;
+    item['properties']['carto_index_high'] = carto_index_high;
+    item['properties']['carto_index_low'] = carto_index_low;
+  });
+  
+  return data;
+};
+
+/*
+normalizeDataCloropleth(data)
+Function to insert in the general GeoJson a key 'metadata'
+with two keys 'carto_index_[high | low] to be passed as 
+limits to the Comunas Cloropleth for Carto.
+*/
+
+function normalizeDataCloropleth(data) {
+  let my_votes = []; // Takes the votes to run analysis. 
+  data.features.forEach(function (item) {
+    my_votes.push(item.properties.votos);
+  });
+  
+  my_votes.sort(function(a, b) {
+    return a - b;
+  });
+
+  let carto_index_high = my_votes[my_votes.length - 1];
+  let carto_index_low = my_votes[0];
+  
+  data.features.forEach(function (item){
+    item['properties']['carto_index_high'] = carto_index_high
+    item['properties']['carto_index_low'] = carto_index_low
+  });
+
+  return data;
+};
