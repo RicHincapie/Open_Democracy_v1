@@ -1,0 +1,2895 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4988, 
+          3.44975
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 1, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESC. JOSE ACEVEDO Y GOMEZ", 
+        "votos": 803
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5672, 
+          3.45227
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 1, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE JOSE HOLGUIN GARCES", 
+        "votos": 1170
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.559, 
+          3.45479
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 1, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE JOSE CELESTINO MUTIS", 
+        "votos": 1841
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5504, 
+          3.45859
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 1, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLISEO BAJO AGUACATAL", 
+        "votos": 694
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.584, 
+          3.45828
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 1, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE CECILIA CABALLERO", 
+        "votos": 397
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5034, 
+          3.43561
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 1, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SEDE MARICE SINISTERRA TERRON", 
+        "votos": 485
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5629, 
+          3.45615
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 1, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COL SANTA ISABEL DE HUNGRIA AG", 
+        "votos": 160
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5274, 
+          3.47043
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "INST UNIV. ANTONIO JOSE CAMACH", 
+        "votos": 705
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.525, 
+          3.46595
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "EDIFICIO FERROCARRILES NACION", 
+        "votos": 1223
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5342, 
+          3.45416
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "C.A.M.", 
+        "votos": 2013
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5332, 
+          3.45613
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO ODONTOLOGICO", 
+        "votos": 686
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5311, 
+          3.47037
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ACADEMIA DE DIBUJO PROFESIONAL", 
+        "votos": 906
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5226, 
+          3.47305
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO HISPANOAMERICANO", 
+        "votos": 1356
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5163, 
+          3.47885
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COL. MIGUEL CAMACHO PEREA", 
+        "votos": 1726
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5087, 
+          3.48785
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "I.E. SANTA CECILIA SEDE 2", 
+        "votos": 1810
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5286, 
+          3.48212
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA REPUBLICA DEL BRASIL", 
+        "votos": 1433
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5047, 
+          3.49148
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA BRISAS DE LOS ALAMOS", 
+        "votos": 1665
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5197, 
+          3.47936
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 2, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "CLUB DE LEONES LA MERCED", 
+        "votos": 1381
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5338, 
+          3.44854
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 3, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ASAMBLEA DEPARTAMENTAL", 
+        "votos": 1035
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5394, 
+          3.44797
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 3, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA CARLOS A. SARDI", 
+        "votos": 1740
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5356, 
+          3.44117
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 3, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO SANTA LIBRADA", 
+        "votos": 1503
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5433, 
+          3.44236
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 3, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "NORMAL SUPERIOR LOS FARALLONE", 
+        "votos": 2075
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5252, 
+          3.45417
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 3, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA REPUBLICA DE MEXICO", 
+        "votos": 767
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5142, 
+          3.46312
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 4, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SEDE MANUELA BELTRAN", 
+        "votos": 1510
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.513, 
+          3.46914
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 4, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA JOSE ANTONIO GALAN", 
+        "votos": 1628
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5095, 
+          3.47208
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 4, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA RAFAEL ZAMORANO", 
+        "votos": 2230
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5024, 
+          3.48241
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 4, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO INEM", 
+        "votos": 2606
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5167, 
+          3.46659
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 4, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO CASD SEDE SANTO TOMAS", 
+        "votos": 668
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5061, 
+          3.46547
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 4, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SEDE SAN VICENTE DE PAUL", 
+        "votos": 938
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4998, 
+          3.46788
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 5, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "S.E.N.A.", 
+        "votos": 3855
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4931, 
+          3.47819
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 5, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA CELMIRA BUENO DE OREJU", 
+        "votos": 4329
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.489, 
+          3.47229
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 5, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA MARIANO OSPINA PEREZ", 
+        "votos": 3227
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5035, 
+          3.46524
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 5, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA MARIA PANESSO", 
+        "votos": 2055
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5035, 
+          3.47108
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 5, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA MARIO LLOREDA", 
+        "votos": 1605
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5022, 
+          3.48894
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 6, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "POLIDEPORTIVO LOS GUADUALES", 
+        "votos": 3524
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5077, 
+          3.44712
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 6, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA LAS AMERICAS", 
+        "votos": 2267
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4899, 
+          3.4934
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 6, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA PABLO EMILIO CAICEDO", 
+        "votos": 2002
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4853, 
+          3.48878
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 6, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SANTA ISABEL DE HUNGRIA CALIMI", 
+        "votos": 1205
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4796, 
+          3.47519
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 6, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SEDE CECILIA MU\u00d1OZ RICAURTE", 
+        "votos": 1239
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.481, 
+          3.47546
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 6, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA SAN JORGE", 
+        "votos": 1457
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4864, 
+          3.48006
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 6, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA SAN LUIS", 
+        "votos": 2566
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4861, 
+          3.4747
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 6, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA TRES DE JULIO", 
+        "votos": 1768
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4913, 
+          3.48763
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 6, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA ATANASIO GIRARDOT", 
+        "votos": 2479
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4821, 
+          3.47951
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "UNIDAD DEPORTIVA PETECUY II", 
+        "votos": 1040
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.48, 
+          3.45944
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COL STA ISABEL  HUNGRIA ALFONS", 
+        "votos": 2423
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4818, 
+          3.45846
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA LOS FARALLONES", 
+        "votos": 1145
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4802, 
+          3.45353
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COL. VICENTE BORRERO COSTA", 
+        "votos": 3227
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4793, 
+          3.4486
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA MANUEL MARIA MALLARINO", 
+        "votos": 759
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4819, 
+          3.44866
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE JUAN BAUTISTA DE LA SALLE", 
+        "votos": 727
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4884, 
+          3.45767
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE MANUEL MARIA MALLARINO CEIB", 
+        "votos": 2115
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4878, 
+          3.46044
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA CARLOS HOLGUIN SARDI", 
+        "votos": 878
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4845, 
+          3.45043
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA ANA MARIA VERNAZA", 
+        "votos": 1187
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.487, 
+          3.44751
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 7, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE SIETE DE AGOSTO", 
+        "votos": 1366
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5107, 
+          3.43982
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 8, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA MANUEL REBOLLEDO", 
+        "votos": 2398
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5077, 
+          3.44712
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 8, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "INST TEC COMERCIAL LAS AMERICA", 
+        "votos": 2756
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5078, 
+          3.44131
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 8, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO SANTA FE", 
+        "votos": 2515
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5175, 
+          3.44707
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 8, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE BENJAMIN HERRERA", 
+        "votos": 1365
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5, 
+          3.44736
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 8, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO LEON DE GREIFF", 
+        "votos": 2640
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4951, 
+          3.44372
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 8, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE ALBERTO CARVAJAL BORRERO", 
+        "votos": 1871
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4997, 
+          3.44483
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 8, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO SAN FRANCISCO DE ASIS", 
+        "votos": 1626
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5349, 
+          3.44032
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 9, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA MARCO FIDEL SUAREZ", 
+        "votos": 1178
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5222, 
+          3.44055
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 9, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESC NUESTRA SE\u00d1ORA DE LOS REME", 
+        "votos": 2782
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5254, 
+          3.45016
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 9, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA REPUBLICA DE ARGENTINA", 
+        "votos": 1268
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5269, 
+          3.43528
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 9, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA OLGA LUCIA LLOREDA", 
+        "votos": 1922
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5296, 
+          3.44174
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 9, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE ANTONIO JOSE CAMACHO", 
+        "votos": 2283
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5258, 
+          3.44068
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 9, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO LA SANTISIMA TRINIDAD", 
+        "votos": 695
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.527, 
+          3.41576
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 10, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SD REPUBLICA DE COSTA RICA", 
+        "votos": 2573
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.523, 
+          3.41087
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 10, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA FERNANDO VELASCO", 
+        "votos": 1762
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5312, 
+          3.42386
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 10, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE NORMAL SUPERIOR SANTIAGO", 
+        "votos": 2844
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5226, 
+          3.41868
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 10, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE CARLOS HOLGUIN LLOREDA", 
+        "votos": 788
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5299, 
+          3.41557
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 10, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "CENTRO PARROQUIAL SAN JUAN BAU", 
+        "votos": 3551
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5254, 
+          3.42497
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 10, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA SAN ROQUE", 
+        "votos": 2902
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5362, 
+          3.41355
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 10, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO RAFAEL NAVIA VARON", 
+        "votos": 2235
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.525, 
+          3.43183
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 10, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA GENERAL CARLOS ALBAN", 
+        "votos": 1205
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5196, 
+          3.41138
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 11, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "AGUSTIN NIETO CABALLERO", 
+        "votos": 3031
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5138, 
+          3.41813
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 11, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE CIUDAD MODELO", 
+        "votos": 1823
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5196, 
+          3.41137
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 11, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA  MARINO RENGIFO SALCED", 
+        "votos": 1646
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5135, 
+          3.42368
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 11, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA SUSANA VINASCO DE QUIN", 
+        "votos": 2426
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5138, 
+          3.42638
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 11, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA JOSE VICENTE CONCHA", 
+        "votos": 1695
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5139, 
+          3.43502
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 11, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA ALFREDO VASQUEZ COBO", 
+        "votos": 1927
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5181, 
+          3.43193
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 11, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE 10 DE MAYO", 
+        "votos": 1878
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.507, 
+          3.42269
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 11, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "CDI MADRE ALBERTA FE Y ALEGRIA", 
+        "votos": 1515
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.504, 
+          3.42726
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 12, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA CIUDAD DE CALI", 
+        "votos": 1962
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5034, 
+          3.43566
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 12, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE MARICE SINISTERRA", 
+        "votos": 1679
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4996, 
+          3.43272
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 12, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO HERNANDO NAVIA VARON", 
+        "votos": 2996
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5005, 
+          3.4367
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 12, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA FENALCO ASTURIAS", 
+        "votos": 1244
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4947, 
+          3.44022
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 12, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE JULIO DE CAICEDO Y TELLEZ", 
+        "votos": 3354
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5065, 
+          3.43061
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 12, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO LA PRESENTACION EL PAR", 
+        "votos": 1531
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5008, 
+          3.4172
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COL PARROQUIAL SE\u00d1OR DE LOS MI", 
+        "votos": 1272
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5019, 
+          3.41998
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA EL DIAMANTE", 
+        "votos": 2060
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4983, 
+          3.41775
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA RODRIGO LLOREDA", 
+        "votos": 2198
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4949, 
+          3.42911
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA MIGUEL CAMACHO PEREA", 
+        "votos": 1559
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5029, 
+          3.42153
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "CENTRO DE CAPACITACION DON BOS", 
+        "votos": 974
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5003, 
+          3.42641
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO COMFANDI CALIPSO", 
+        "votos": 2100
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4883, 
+          3.42227
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA SANTA ROSA", 
+        "votos": 2445
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          76.4855, 
+          3.43052
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO LOS LAGOS", 
+        "votos": 1127
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4938, 
+          3.43607
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA BARTOLOME LOBOGUERRERO", 
+        "votos": 2126
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4911, 
+          3.43121
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SENA CDTI", 
+        "votos": 1389
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4874, 
+          3.43266
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO JESUS VILLAFA\u00d1E FRANCO", 
+        "votos": 1020
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4916, 
+          3.43924
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 13, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO ENRIQUE OLAYA HERRERA", 
+        "votos": 895
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4799, 
+          3.43958
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 14, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA LA ANUNCIACION", 
+        "votos": 2237
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4737, 
+          3.43231
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 14, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "INSTITUCION EDUCATIVA PUERTA DEL SOL", 
+        "votos": 2056
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4811, 
+          3.42752
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 14, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA RAUL SILVA HOLGUIN", 
+        "votos": 1433
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4812, 
+          3.42825
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 14, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE MONSE\u00d1OR RAMON ARCILA", 
+        "votos": 1520
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4712, 
+          3.41836
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 14, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COL FRAY LUIS AMIGO - FE Y ALE", 
+        "votos": 1862
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4801, 
+          3.41743
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 14, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA GABRIELA MISTRAL", 
+        "votos": 2145
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4771, 
+          3.41528
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 14, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COL PARROQUIAL SAN FRANCISCO J", 
+        "votos": 1426
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4719, 
+          3.4238
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 14, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE ELIAS SALAZAR GARCIA", 
+        "votos": 1303
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4873, 
+          3.4193
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 14, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "INSTITUCION EDUCATIVA NUEVO LA", 
+        "votos": 1588
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5145, 
+          3.39606
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 15, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO CIUDAD DE CORDOBA", 
+        "votos": 3631
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5014, 
+          3.40727
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 15, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA OLAYA HERRERA", 
+        "votos": 2897
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4959, 
+          3.41376
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 15, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA JOSE RAMON BEJARANO", 
+        "votos": 1701
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4931, 
+          3.41227
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 15, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE GABRIEL GARCIA MARQUEZ", 
+        "votos": 1265
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4885, 
+          3.41496
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 15, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA NI\u00d1O JESUS DE ATOCHA", 
+        "votos": 2387
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.492, 
+          3.41113
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 15, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE CARLOS HOLGUIN MALLARINO", 
+        "votos": 634
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4985, 
+          3.40627
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 15, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO MADRE SIFFREDI-FE Y AL", 
+        "votos": 1099
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5055, 
+          3.39326
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 15, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE LLANO VERDE", 
+        "votos": 823
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5187, 
+          3.4067
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 16, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE RODRIGO LLOREDA- INTENALCO", 
+        "votos": 1526
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5149, 
+          3.40261
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 16, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA CRISTOBAL COLON", 
+        "votos": 2058
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5106, 
+          3.40617
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 16, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA CARLOS HOLMES TRUJILLO", 
+        "votos": 2146
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5081, 
+          3.41666
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 16, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA PABLO NERUDA", 
+        "votos": 2096
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5129, 
+          3.41299
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 16, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SEDE CRISTO MAESTRO", 
+        "votos": 1442
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5171, 
+          3.397
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 16, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SANTA ISABEL DE HUNGRIA S. CIU", 
+        "votos": 1891
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5115, 
+          3.41207
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 16, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "I.E. LIBARDO MADRID VALDERRAMA", 
+        "votos": 3526
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5397, 
+          3.39387
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 17, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO LOS ANDES", 
+        "votos": 2664
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.522, 
+          3.38409
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 17, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO COMFANDI", 
+        "votos": 4755
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5338, 
+          3.39238
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 17, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO REYES CATOLICOS", 
+        "votos": 2214
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5334, 
+          3.37429
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 17, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "UNIVALLE SEDE MELENDEZ", 
+        "votos": 2951
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5322, 
+          3.40387
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 17, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA LUIS CARLOS ROJAS", 
+        "votos": 3344
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5387, 
+          3.40614
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 17, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "C.V.C", 
+        "votos": 3029
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5375, 
+          3.4076
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 17, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "CENTRO CULTURAL COLOMBO AMERIC", 
+        "votos": 2008
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5236, 
+          3.40372
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 17, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "I.E.T.I.COMUNA 17", 
+        "votos": 1672
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5545, 
+          3.39069
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 18, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA ALVARO ESCOBAR NAVIA", 
+        "votos": 1281
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5468, 
+          3.39207
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 18, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "INSTITUTO CENTRAL DE COMERCIO", 
+        "votos": 2215
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5558, 
+          3.38666
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 18, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA JUAN PABLO II", 
+        "votos": 887
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5564, 
+          3.39097
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 18, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA PORTETE DE TARQUI", 
+        "votos": 1352
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5509, 
+          3.39107
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 18, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "UNIVERSIDAD COOPERATIVA", 
+        "votos": 3156
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5549, 
+          3.37629
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 18, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA LA ESPERANZA", 
+        "votos": 896
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5448, 
+          3.37843
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 18, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO AMERICANO", 
+        "votos": 2901
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5591, 
+          3.37479
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 18, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESC MAGDALENA ORTEGA DE NARI\u00d1O", 
+        "votos": 873
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5592, 
+          3.38205
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 18, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ACADEMIA JOSE MARIA CABAL", 
+        "votos": 487
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.553, 
+          3.41588
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "INST EDUC  EUSTAQUIO PALACIOS", 
+        "votos": 1685
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5442, 
+          3.42754
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "INSTITUTO PARA NI\u00d1OS CIEGOS Y", 
+        "votos": 1597
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5491, 
+          3.42684
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COL SANTA MARIA STELLA MARIS", 
+        "votos": 907
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5455, 
+          3.40579
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA 25 DE JULIO", 
+        "votos": 799
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5537, 
+          3.40378
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO POLITECNICO", 
+        "votos": 3150
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5468, 
+          3.4313
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "UNIVALLE SEDE SAN FERNANDO", 
+        "votos": 1437
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.538, 
+          3.42234
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "UNID.DEP.PANAM.CANCHA DE TEJO", 
+        "votos": 1906
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5391, 
+          3.42341
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "LICEO DEPARTAMENTAL FEMENINO", 
+        "votos": 1479
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5526, 
+          3.44522
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA FRANCISCO JOSE DE CALD", 
+        "votos": 1268
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5303, 
+          3.43219
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA CAMILO TORRES", 
+        "votos": 1323
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5371, 
+          3.43584
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA GRAN COLOMBIA", 
+        "votos": 1292
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5491, 
+          3.44196
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SEDE LOS CRISTALES", 
+        "votos": 335
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.563, 
+          3.41502
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 20, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA REPUBLICA DE PANAMA", 
+        "votos": 1528
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5547, 
+          3.42395
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 20, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA LUIS LOPEZ DE MESA", 
+        "votos": 678
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5533, 
+          3.4174
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 20, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "IE JUANA DE CAICEDO Y CUERO", 
+        "votos": 2829
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5524, 
+          3.42222
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 20, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SEDE GENERAL ANZOATEGUI", 
+        "votos": 1197
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5532, 
+          3.42848
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 20, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA CELANESE", 
+        "votos": 464
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5615, 
+          3.41837
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 20, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA SOFIA CAMARGO", 
+        "votos": 785
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4748, 
+          3.40003
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 21, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "ESCUELA ANTONIO MACEO PIZAMOS", 
+        "votos": 1052
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4681, 
+          3.41454
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 21, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "STA ISABEL DE HUNGRIA CALIMIO", 
+        "votos": 2372
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4634, 
+          3.42764
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 21, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "SANTA ISABEL DE HUNGRIA INVICALI", 
+        "votos": 2085
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.47, 
+          3.43099
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 21, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO FUNDACION COMPARTIR", 
+        "votos": 2878
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4711, 
+          3.43541
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 21, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "FUNDACION COLEGIO NARI\u00d1O", 
+        "votos": 1611
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.4696, 
+          3.40799
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 21, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO POTREROGRANDE", 
+        "votos": 955
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5317, 
+          3.35996
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 22, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLEGIO BENETT", 
+        "votos": 1440
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5439, 
+          3.34486
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 22, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "UNIVERSIDAD DE SAN BUENAVENTUR", 
+        "votos": 462
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5439, 
+          3.34486
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 22, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "UNIVERSIDAD ICESI", 
+        "votos": 465
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5518, 
+          3.41341
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 19, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "COLISEO DEL PUEBLO", 
+        "votos": 2374
+      }, 
+      "type": "Feature"
+    }, 
+    {
+      "geometry": {
+        "coordinates": [
+          -76.5115, 
+          3.43208
+        ], 
+        "type": "Point"
+      }, 
+      "properties": {
+        "candidato_id": 2, 
+        "comuna_id": 11, 
+        "nombre_cand": "Jorge Ivan Ospina Gomez", 
+        "nombre_puesto": "CARCEL VILLANUEVA", 
+        "votos": 1521
+      }, 
+      "type": "Feature"
+    }
+  ], 
+  "type": "FeatureCollection"
+}
