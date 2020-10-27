@@ -135,6 +135,7 @@ footer.myfeet {
     height: 100px;
     color: white;
     display: flex;
+    align-items: center;
     justify-content: center;
     text-align: center;
     border-radius: 80px 80px 0px 0px;
