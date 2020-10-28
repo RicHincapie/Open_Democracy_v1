@@ -17,7 +17,7 @@
 [4]: https://github.com/moncada92
 [5]: https://twitter.com/ch_canaza
 [6]: https://github.com/ch-canaza
-[7]: http://www.twitter.com/linkjavier
+[7]: https://twitter.com/linkjavier
 [8]: https://github.com/linkjavier
 [9]: https://twitter.com/javifullstack
 [10]: https://github.com/J4VJ4R
@@ -63,21 +63,20 @@ Look **Deployment** for project deploy.
     `sudo apt-get install -y python3-mysqldb`
 
 
--Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. And Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX. It's a pre-fork worker model. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resources, and fairly speedy. Install both:
-
+- Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. And Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX. It's a pre-fork worker model. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resources, and fairly speedy. Install both:
 
     `pip3 install gunicorn flask`
 
--Flasgger is a Flask extension to extract OpenAPI-Specification from all Flask views registered in our API:
+- Flasgger is a Flask extension to extract OpenAPI-Specification from all Flask views registered in our API:
     
     `pip3 install flasgger`
 
 
--A Flask extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible.
+- A Flask extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible.
 
     `pip3 install flask_cors`
 
--Nginx is a lightweight, high-performance reverse proxy / web server and proxy for email protocols (IMAP / POP3):
+- Nginx is a lightweight, high-performance reverse proxy / web server and proxy for email protocols (IMAP / POP3):
 
     `sudo apt install nginx`
     
@@ -113,33 +112,33 @@ and that you are executing it from the Open_Democracy_1 directory.
 
 For development database:
 
-ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app
+`ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app`
 
 For user database:
 
-ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app
+`ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app`
 
 --------
 Usage
 --------
 
 Get Route to check the status
-curl -X GET http://0.0.0.0:5005/api/v1/status
+`curl -X GET http://0.0.0.0:5005/api/v1/status`
 
 Get total number of each class elements of the database
-curl -X GET http://0.0.0.0:5005/api/v1/stats
+`curl -X GET http://0.0.0.0:5005/api/v1/stats`
 
 Get All resultados:
-curl -X GET http://0.0.0.0:5005/api/v1/resultados
+`curl -X GET http://0.0.0.0:5005/api/v1/resultados`
 
 Bring a unique result by id <int>:
-curl -X GET http://0.0.0.0:5005/api/v1/resultados/<int>
+`curl -X GET http://0.0.0.0:5005/api/v1/resultados/<int>`
 
 Bring results by puesto with a candidate_id <int>:
-curl -X GET http://0.0.0.0:5005/api/v1/<int>
+`curl -X GET http://0.0.0.0:5005/api/v1/<int>
 
-Bring results by comunas with a candidate_id <int>:
-curl -X GET http://0.0.0.0:5005/api/v1/resultado/comunas/<int> 
+Bring results by comunas with a candidate_id <int>:`
+`curl -X GET http://0.0.0.0:5005/api/v1/resultado/comunas/<int>` 
 
 ```
 Ejemplo
