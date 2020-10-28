@@ -90,9 +90,6 @@ Look **Deployment** for project deploy.
     `sudo ufw allow 'Nginx Full'`
 
 
-
-_Que cosas necesitamos para instalar el software y como instalarlas_
-
 ```
 Ejemplo
 ```
@@ -102,10 +99,8 @@ Ejemplo
 
 First we need to start the flask application:
 
-***
 API INSTRUCTIONS
-***
---------
+
 
 In Open Democracy path, Copy and paste the below code. Please note that the port 5005 must be free
 and that you are executing it from the Open_Democracy_1 directory. 
@@ -122,6 +117,9 @@ For user database:
 _Finalizamos con un ejemplo de cómo obtener datos de la API o como usarlos para una pequeña demo_
 
 ## Running the tests ⚙️
+
+After starting the flask server, we can make the calls to the api routes.
+
 
 Get Route to check the status of the api:
 
@@ -147,17 +145,11 @@ Bring results by comunas with a candidate_id:
 
 `curl -X GET http://0.0.0.0:5005/api/v1/resultado/comunas/<int>` 
 
-### Analice las pruebas end-to-end 🔩
-
-_Explicamos las pruebas verifican estas pruebas y por qué_
-
-```
-Ejemplo
-```
 
 ## Deploy 📦
 
 The project is intended to be deployed on three servers. A Load Balancer to distribute the connections to two servers, each with its own database. Working as master and slave respectively.
+
 
 ## Build with 🛠️
 
@@ -174,6 +166,7 @@ The project is intended to be deployed on three servers. A Load Balancer to dist
 ## Contributing 🖇️
 
 Please read [CONTRIBUTING.md] (https://gist.github.com/ricarhincapie/Open_Democracy_v1) for details of our code of conduct, and the process for submitting pull requests.
+
 
 ## Authors ✒️
 
