@@ -64,7 +64,7 @@ header{
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    background:  rgba(255,255,255,0.9);
+    background:  rgba(255,255,255,0.99);
 }
 nav {
     padding: 0em 1em 0em 0em;
@@ -486,3 +486,4 @@ section.content select{
     0%, 39%, 100% { opacity: 0; }
     40% { opacity: 1; } 
   }
+

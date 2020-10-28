@@ -52,6 +52,8 @@ const images = [
   }
 ];
 export default class UI {
+  // Builds the HTML for the panelInfo section where the candidates are shown 
+  // sorted by votes.
   candidateSelect (getJson) {
     getJson.forEach(el => {
       select.innerHTML += `<option data-id="${el.id}" value="${el.nombre}">${el.nombre}</option>`;
@@ -61,7 +63,7 @@ export default class UI {
   buildInformation (getJson, selected) {
     let totalVotes = 0;
     let totalVotesCandidate = 0;
-    let porcentageCandidate = 0;
+    let porcentajeCandidate = 0;
     let selectCandidate = selected;
     const listCandidate = getJson.sort(this.compare);
     let position = 0;
@@ -78,7 +80,7 @@ export default class UI {
       }
     });
 
-    porcentageCandidate = Math.round(((totalVotesCandidate / totalVotes) * 100) * 10) / 10;
+    porcentajeCandidate = Math.round(((totalVotesCandidate / totalVotes) * 100) * 10) / 10;
 
     const isHigh = (accu, value) => accu.votos > value.votos ? accu : value;
     const isLow = (accu, value) => accu.votos < value.votos ? accu : value;
@@ -97,7 +99,7 @@ export default class UI {
     });
 
     allVotes.textContent = `Total votes: ${totalVotesCandidate}`;
-    number.textContent = `${porcentageCandidate}%`;
+    number.textContent = `${porcentajeCandidate}%`;
     ranking.textContent = `${position} Position`;
 
     if (resultHight.nombre === selectCandidate) {
@@ -111,7 +113,7 @@ export default class UI {
         { width: '0%', background: '#f44336' },
         { background: '#f44336' },
         { background: '#FDD835' },
-        { width: `${porcentageCandidate}%`, background: '#3fbc69' }
+        { width: `${porcentajeCandidate}%`, background: '#3fbc69' }
       ], {
         duration: 1700,
         delay: 500,
@@ -126,7 +128,7 @@ export default class UI {
 
       fill.animate([
         { width: '0%', background: '#f44336' },
-        { width: `${porcentageCandidate}%`, background: '#f44336' }
+        { width: `${porcentajeCandidate}%`, background: '#f44336' }
       ], {
         duration: 1200,
         delay: 500,
@@ -141,7 +143,7 @@ export default class UI {
 
       fill.animate([
         { width: '0%', background: '#f44336' },
-        { width: `${porcentageCandidate}%`, background: '#FDD835' }
+        { width: `${porcentajeCandidate}%`, background: '#FDD835' }
       ], {
         duration: 1500,
         delay: 500,
@@ -168,12 +170,12 @@ export default class UI {
       } else {
         selectClass = '';
       }
-      const porcentage = Math.round(((el.votos / totalVotes) * 100) * 10) / 10;
-      listPorsnt.push(porcentage);
+      const porcentaje = Math.round(((el.votos / totalVotes) * 100) * 10) / 10;
+      listPorsnt.push(porcentaje);
 
       contentTable.innerHTML += `
         <div class='stadistic ${selectClass}'>
-            <p class='name'>${el.nombre}<span>${porcentage}%</span></p>
+            <p class='name'>${el.nombre}<span>${porcentaje}%</span></p>
             <div class='line'>
                 <div class='fill'></div>
             </div>

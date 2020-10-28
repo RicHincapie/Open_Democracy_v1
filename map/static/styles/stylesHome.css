@@ -1,0 +1,224 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+.containerHome{
+    padding-top:64px;
+    color: #262059;
+    
+}
+
+section.contentHomeHead{
+    padding: 1em 1.5em 1em 1.5em;
+    background :linear-gradient(to right,#262059, #463CA6);
+    width: 100%;
+    max-height: 550px;
+    border-bottom-right-radius: 150px;
+    color: white;
+    display:flex;
+    text-align: justify;
+    outline: none;
+     
+}
+#textHead{
+    opacity: 0; 
+}
+#textHead.fadeUp{
+    animation: fadeup 1s forwards;
+    animation-delay: 0.5s;
+}
+@keyframes fadeup {
+    0%{opacity: 0;transform: translateY(-30%);}
+    100%{opacity: 1;transform: translateY(0%);}
+}
+#mapGif{
+    opacity: 0;
+}
+#mapGif.fadeDown{
+    animation: fadedown 1s forwards;
+    animation-delay: 1s;
+}
+@keyframes fadedown {
+    0%{opacity: 0;transform: translateY(30%);}
+    100%{opacity: 1;transform: translateY(80px);}
+}
+div.contentHead{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+div.contentHead h1 {
+    font-size: 36px;
+    font-family: 'Quicksand';
+    margin-bottom: 15px;
+}
+
+.contentHead p {
+    max-width: 440px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 25px;
+    line-height: 25px;
+
+}
+.contentHead img {
+    object-fit: cover;
+    width: 380px;
+    height: 500px;
+    transform: translateY(80px);
+    box-shadow: 0em 0.2em 0.4em rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+
+div.contentHead a {
+    display: inline-block;
+    text-align:center;
+    line-height: 45px;
+}
+
+div.contentHead a.moreInfoButton {
+    background: linear-gradient(to right, #463CA6,#262059);
+    color: white;
+    border:2px solid white;
+    border-radius: 25px 25px 25px 25px;
+    width: 140px;
+    height: 50px;  
+}
+div.contentHead a.moreInfoButton:hover{
+    cursor: pointer;
+}
+
+div.contentHead a.viewDemoButton {
+    background:linear-gradient(to left, #F75A28, #ff3d00);
+    color: white;
+    border: 0px transparent;
+    outline: 0px transparent;
+    border-radius: 25px 25px 25px 25px;
+    width: 140px;
+    height: 50px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+div.contentHead a.viewDemoButton:hover{
+    cursor: pointer;
+    background:linear-gradient(to left, #ff3d00, #F75A28);
+    transform: scale(1.1);
+}
+div.containerHomeHow section.contentHow {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    color: #262059;
+
+}
+div.containerHomeHow section.contentHow h1{
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 1em;
+}
+
+div.containerFeatures section.contentFeat1{
+    display: flex;
+    justify-content: center;
+    color: #262059;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+div.containerFeatures section.contentFeat2{
+    display: flex;
+    justify-content: center;
+    color: #262059;
+    max-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em 1em;
+}
+
+div.containerFeatures img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+div.containerFeatures section.contentFeat1{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    max-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em 1em;
+}
+div.containerFeatures1{
+    margin-left: 5px;
+    height: 340px;
+    max-width: 460px;
+    width: 100%;
+}
+div.containerFeatures2{
+    margin-left: 5px;
+    height: 340px;
+    max-width: 460px;
+    width: 100%;
+}
+
+.containerFeatures1.text{
+    padding-right: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.containerFeatures2.text{
+    padding-left: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+div.containerFeatures1 p {
+    text-align: justify;
+    width: 100%;
+    max-width: 420px;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 500;
+}
+div.containerFeatures2 p {
+    text-align: justify;
+    width: 100%;
+    max-width: 420px;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+footer.myfeet {
+    background-color: #262059;
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 80px 80px 0px 0px;
+}
+u.underline { 
+    text-decoration: underline;
+    text-decoration-color: #F75A28;
+  }
