@@ -1,3 +1,31 @@
+<!-- icons with padding -->
+
+[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
+[2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
+[3.1]: http://i.imgur.com/yCsTjba.png (google plus icon with padding)
+[4.1]: http://i.imgur.com/YckIOms.png (tumblr icon with padding)
+[5.1]: http://i.imgur.com/1AGmwO3.png (dribbble icon with padding)
+[6.1]: http://i.imgur.com/0o48UoR.png (github icon with padding)
+
+<!-- icons without padding -->
+
+[1.2]: http://i.imgur.com/wWzX9uB.png (twitter icon without padding)
+[2.2]: http://i.imgur.com/fep1WsG.png (facebook icon without padding)
+[3.2]: http://i.imgur.com/VlgBKQ9.png (google plus icon without padding)
+[4.2]: http://i.imgur.com/jDRp47c.png (tumblr icon without padding)
+[5.2]: http://i.imgur.com/Vvy3Kru.png (dribbble icon without padding)
+[6.2]: http://i.imgur.com/9I6NRUm.png (github icon without padding)
+
+<!-- links to your social media accounts -->
+<!-- update these accordingly -->
+
+[1]: http://www.twitter.com/linkjavier
+[2]: http://www.facebook.com/sednaoui
+[3]: https://plus.google.com/+CarlSednaoui
+[4]: http://carlsed.tumblr.com
+[5]: http://dribbble.com/carlsednaoui
+[6]: http://www.github.com/linkjavier
+
 ![Open-Democracy-Banner](https://user-images.githubusercontent.com/54350108/97485354-03ea3900-1928-11eb-8098-d350a053b70f.jpg)
 
 # Open Democracy
@@ -18,50 +46,53 @@ Look **Deployment** for project deploy.
 
 ### Pre-requirements 📋
 
--If for some reason your Ubuntu server doesn't have Python installed, install it.
+-If for some reason your Ubuntu server doesn`t have Python installed, install it.
 
 -Pip is a package management system used to install and manage software packages written in Python:
 
-    'sudo apt install -y python3-pip'
+    `sudo apt install -y python3-pip`
 
 -On the test servers we had problems installing or running services, specifically with locales. We just set them:
 
-    'export LC_ALL="en_US.UTF-8"'
-    'export LC_CTYPE="en_US.UTF-8"'
+    `export LC_ALL="en_US.UTF-8"`
+    `export LC_CTYPE="en_US.UTF-8"`
 
 -SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL:
 
-    'pip3 install SQLAlchemy'
+    `pip3 install SQLAlchemy`
 
 
 -MySQLdb is an interface to the popular MySQL database server for Python:
     
-    'sudo apt-get install -y python3-mysqldb'
+    `sudo apt-get install -y python3-mysqldb`
 
 
 -Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. And Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX. It's a pre-fork worker model. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resources, and fairly speedy. Install both:
 
-    'pip3 install gunicorn flask'
+
+    `pip3 install gunicorn flask`
+
+-Flasgger is a Flask extension to extract OpenAPI-Specification from all Flask views registered in our API:
+    
+    `pip3 install flasgger`
 
 
+-A Flask extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible.
 
-'pip3 install flasgger'
-'pip3 install flask_cors'
-
-
-
+    `pip3 install flask_cors`
 
 -Nginx is a lightweight, high-performance reverse proxy / web server and proxy for email protocols (IMAP / POP3):
 
-    'sudo apt install nginx'
+    `sudo apt install nginx`
     
+
     The firewall software must be configured to allow access to the service. Nginx registers itself as a service with ufw upon installation, making allowing Nginx access easy:
 
-    'sudo ufw allow 'Nginx HTTP''
+    `sudo ufw allow 'Nginx HTTP'`
 
     Nginx Full: This profile opens both port 80 (normal, unencrypted web traffic) and port 443 (encrypted TLS / SSL traffic):
 
-    'sudo ufw allow 'Nginx Full''
+    `sudo ufw allow 'Nginx Full'`
 
 
 
@@ -73,9 +104,46 @@ Ejemplo
 
 ### Installation 🔧
 
-_Una serie de ejemplos paso a paso que nos dice lo que debemos ejecutar para tener un entorno de desarrollo ejecutandose_
 
-_Cómo será ese paso_
+First we need to start the flask application:
+
+***
+API INSTRUCTIONS
+***
+--------
+
+In Open Democracy path, Copy and paste the below code. Please note that the port 5005 must be free
+and that you are executing it from the Open_Democracy_1 directory. 
+
+For development database:
+
+ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app
+
+For user database:
+
+ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app
+
+--------
+Usage
+--------
+
+Get Route to check the status
+curl -X GET http://0.0.0.0:5005/api/v1/status
+
+Get total number of each class elements of the database
+curl -X GET http://0.0.0.0:5005/api/v1/stats
+
+Get All resultados:
+curl -X GET http://0.0.0.0:5005/api/v1/resultados
+
+Bring a unique result by id <int>:
+curl -X GET http://0.0.0.0:5005/api/v1/resultados/<int>
+
+Bring results by puesto with a candidate_id <int>:
+curl -X GET http://0.0.0.0:5005/api/v1/<int>
+
+Bring results by comunas with a candidate_id <int>:
+curl -X GET http://0.0.0.0:5005/api/v1/resultado/comunas/<int> 
 
 ```
 Ejemplo
@@ -129,7 +197,7 @@ Please read [CONTRIBUTING.md] (https://gist.github.com/ricarhincapie/Open_Democr
 * **Ricardo Hincapie** - *Back-End* - [ricarhincapie](https://github.com/ricarhincapie)
 * **Camilo Moncada** - *Front-End* - [moncada92](https://github.com/moncada92)
 * **Cristian Nazareno** - *Front-End* - [ch-canaza](https://github.com/ch-canaza)
-* **Javier Charria** - *Back-End* - [linkjavier](https://github.com/linkjavier)
+* **Javier Charria** - *Back-End* - [linkjavier](https://github.com/linkjavier)[![alt text][1.2]][1][![alt text][6.2]][6]
 
 You can also look at the list of all [contributors] (https://github.com/ricarhincapie/Open_Democracy_v1/contributors) who have participated in this project.
 
