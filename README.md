@@ -42,23 +42,23 @@ Look **Deployment** for project deploy.
 
 ### Pre-requirements 📋
 
--If for some reason your Ubuntu server doesn`t have Python installed, install it.
+- If for some reason your Ubuntu server doesn`t have Python installed, install it.
 
--Pip is a package management system used to install and manage software packages written in Python:
+- Pip is a package management system used to install and manage software packages written in Python:
 
     `sudo apt install -y python3-pip`
 
--On the test servers we had problems installing or running services, specifically with locales. We just set them:
+- On the test servers we had problems installing or running services, specifically with locales. We just set them:
 
     `export LC_ALL="en_US.UTF-8"`
     `export LC_CTYPE="en_US.UTF-8"`
 
--SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL:
+- SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL:
 
     `pip3 install SQLAlchemy`
 
 
--MySQLdb is an interface to the popular MySQL database server for Python:
+- MySQLdb is an interface to the popular MySQL database server for Python:
     
     `sudo apt-get install -y python3-mysqldb`
 
@@ -118,43 +118,34 @@ For user database:
 
 `ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app`
 
---------
-Usage
---------
-
-Get Route to check the status
-`curl -X GET http://0.0.0.0:5005/api/v1/status`
-
-Get total number of each class elements of the database
-`curl -X GET http://0.0.0.0:5005/api/v1/stats`
-
-Get All resultados:
-`curl -X GET http://0.0.0.0:5005/api/v1/resultados`
-
-Bring a unique result by id <int>:
-`curl -X GET http://0.0.0.0:5005/api/v1/resultados/<int>`
-
-Bring results by puesto with a candidate_id <int>:
-`curl -X GET http://0.0.0.0:5005/api/v1/<int>
-
-Bring results by comunas with a candidate_id <int>:`
-`curl -X GET http://0.0.0.0:5005/api/v1/resultado/comunas/<int>` 
-
-```
-Ejemplo
-```
-
-_Y repetimos_
-
-```
-hasta finalizar
-```
 
 _Finalizamos con un ejemplo de cómo obtener datos de la API o como usarlos para una pequeña demo_
 
 ## Running the tests ⚙️
 
-_Explicamos como ejecutar las pruebas en todas las @routes_
+Get Route to check the status of the api:
+
+`curl -X GET http://0.0.0.0:5005/api/v1/status`
+
+Get total number of each class elements of the database:
+
+`curl -X GET http://0.0.0.0:5005/api/v1/stats`
+
+Get All resultados:
+
+`curl -X GET http://0.0.0.0:5005/api/v1/resultados`
+
+Bring a unique result by id:
+
+`curl -X GET http://0.0.0.0:5005/api/v1/resultados/<int>`
+
+Bring results by puesto with a candidate_id:
+
+`curl -X GET http://0.0.0.0:5005/api/v1/<int>`
+
+Bring results by comunas with a candidate_id:
+
+`curl -X GET http://0.0.0.0:5005/api/v1/resultado/comunas/<int>` 
 
 ### Analice las pruebas end-to-end 🔩
 
@@ -166,20 +157,18 @@ Ejemplo
 
 ## Deploy 📦
 
-_Agregamos notas adicionales sobre como hacer deploy (se explica en un solo servidor? o el proyecto con load balancer?_
+The project is intended to be deployed on three servers. A Load Balancer to distribute the connections to two servers, each with its own database. Working as master and slave respectively.
 
 ## Build with 🛠️
 
-* [Carto](https://carto.com/) - API usada para generar el mapa
-* [Python](https://www.python.org/) - lenguaje usado para generar los Scripts para el servidor web 
-* [Flask](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
-* [MySQL](https://www.mysql.com/) - Usado para generar la base de datos
-* [Flask](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
-* [SQLAlchemy](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
-* [Flask](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
-* [Nginx](https://www.nginx.com/) - Usado para generar el servidor web
-* [Flask](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
-
+* [Carto](https://carto.com/) - Library used to generate the interactive map
+* [Python](https://www.python.org/) - Language used to generate the scripts for the web server
+* [Flask](https://palletsprojects.com/p/flask/) - Lightweight WSGI web application framework to start Web app
+* [MySQL](https://www.mysql.com/) - Used to generate the Database
+* [SQLAlchemy](https://www.sqlalchemy.org/) - SQL toolkit and Object Relational Mapper
+* [MySQLdb](https://pypi.org/project/MySQL-python/) - Interface to the MySQL database server
+* [Nginx](https://www.nginx.com/) - Used to generate the web server for HTTP and HTTPS requests
+* [Flasgger](https://github.com/flasgger/flasgger/) - Flask extension to extract OpenAPI-Specification from all Flask views registered in our API
 
 
 ## Contributing 🖇️
@@ -196,9 +185,6 @@ Please read [CONTRIBUTING.md] (https://gist.github.com/ricarhincapie/Open_Democr
 
 You can also look at the list of all [contributors] (https://github.com/ricarhincapie/Open_Democracy_v1/contributors) who have participated in this project.
 
-## Licence 📄
-
-This project is under the License (Your License) - see the file [LICENSE.md] (LICENSE.md) for details
 
 ## Expresiones de Gratitud 🎁
 
