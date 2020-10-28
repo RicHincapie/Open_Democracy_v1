@@ -1,30 +1,26 @@
 <!-- icons with padding -->
 
-[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
-[2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
-[3.1]: http://i.imgur.com/yCsTjba.png (google plus icon with padding)
-[4.1]: http://i.imgur.com/YckIOms.png (tumblr icon with padding)
-[5.1]: http://i.imgur.com/1AGmwO3.png (dribbble icon with padding)
-[6.1]: http://i.imgur.com/0o48UoR.png (github icon with padding)
+[1.1]: http://i.imgur.com/tXSoThF.png (Twitter)
+[6.1]: http://i.imgur.com/0o48UoR.png (Github)
 
 <!-- icons without padding -->
 
-[1.2]: http://i.imgur.com/wWzX9uB.png (twitter icon without padding)
-[2.2]: http://i.imgur.com/fep1WsG.png (facebook icon without padding)
-[3.2]: http://i.imgur.com/VlgBKQ9.png (google plus icon without padding)
-[4.2]: http://i.imgur.com/jDRp47c.png (tumblr icon without padding)
-[5.2]: http://i.imgur.com/Vvy3Kru.png (dribbble icon without padding)
-[6.2]: http://i.imgur.com/9I6NRUm.png (github icon without padding)
+[1.2]: http://i.imgur.com/wWzX9uB.png (Twitter)
+[6.2]: http://i.imgur.com/9I6NRUm.png (Github)
 
 <!-- links to your social media accounts -->
 <!-- update these accordingly -->
 
-[1]: http://www.twitter.com/linkjavier
-[2]: http://www.facebook.com/sednaoui
-[3]: https://plus.google.com/+CarlSednaoui
-[4]: http://carlsed.tumblr.com
-[5]: http://dribbble.com/carlsednaoui
-[6]: http://www.github.com/linkjavier
+[1]: https://twitter.com/RicarHincapie
+[2]: https://github.com/ricarhincapie
+[3]: https://twitter.com/camilo_mon1992
+[4]: https://github.com/moncada92
+[5]: https://twitter.com/ch_canaza
+[6]: https://github.com/ch-canaza
+[7]: http://www.twitter.com/linkjavier
+[8]: https://github.com/linkjavier
+[9]: https://twitter.com/javifullstack
+[10]: https://github.com/J4VJ4R
 
 ![Open-Democracy-Banner](https://user-images.githubusercontent.com/54350108/97485354-03ea3900-1928-11eb-8098-d350a053b70f.jpg)
 
@@ -182,7 +178,7 @@ _Agregamos notas adicionales sobre como hacer deploy (se explica en un solo serv
 * [Flask](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
 * [SQLAlchemy](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
 * [Flask](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
-* [Flask](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
+* [Nginx](https://www.nginx.com/) - Usado para generar el servidor web
 * [Flask](ttps://palletsprojects.com/p/flask/) - Usado para generar el servidor web
 
 
@@ -191,13 +187,13 @@ _Agregamos notas adicionales sobre como hacer deploy (se explica en un solo serv
 
 Please read [CONTRIBUTING.md] (https://gist.github.com/ricarhincapie/Open_Democracy_v1) for details of our code of conduct, and the process for submitting pull requests.
 
-## Autores ✒️
+## Authors ✒️
 
-* **Javier Jaramillo** - *Front-End* - [J4VJ4R](https://github.com/J4VJ4R)
-* **Ricardo Hincapie** - *Back-End* - [ricarhincapie](https://github.com/ricarhincapie)
-* **Camilo Moncada** - *Front-End* - [moncada92](https://github.com/moncada92)
-* **Cristian Nazareno** - *Front-End* - [ch-canaza](https://github.com/ch-canaza)
-* **Javier Charria** - *Back-End* - [linkjavier](https://github.com/linkjavier)[![alt text][1.2]][1][![alt text][6.2]][6]
+* **Ricardo Hincapie** - *Back-End* - [![alt text][1.2]][1][![alt text][6.2]][2]
+* **Camilo Moncada** - *Front-End* - [![alt text][1.2]][3][![alt text][6.2]][4]
+* **Cristian Nazareno** - *Front-End* - [![alt text][1.2]][5][![alt text][6.2]][6]
+* **Javier Charria** - *Back-End* - [![alt text][1.2]][7][![alt text][6.2]][8]
+* **Javier Jaramillo** - *Front-End* - [![alt text][1.2]][9][![alt text][6.2]][10]
 
 You can also look at the list of all [contributors] (https://github.com/ricarhincapie/Open_Democracy_v1/contributors) who have participated in this project.
 
