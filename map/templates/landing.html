@@ -4,31 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" contentHome="width=device-width, initial-scale=1.0">
     <title>Open Democracy</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/images/favicon-96x96.png">
     <link rel="stylesheet" type="text/css" href="../static/styles/style.css">
-    
     <link rel="stylesheet" type="text/css" href="../static/styles/stylesHome.css">
-
     <link rel="stylesheet"  type="text/css" href="../static/styles/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,600&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/973287a624.js" crossorigin="anonymous"></script>
-
-       
 </head>
-<body>
+<body class="scroll">
 
     <div class="btn-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
     </div>
     <header>
         <div class="contLogo">
-            <img src="../static/images/logo-final2.png" alt="">
+            <img src="../static/images/Logo-header.svg" alt="">
         </div>
         <nav>
             <ul>
-                <li><a class = "active" href="#">Home</a></li>
-                <li><a href="#">Demo</a></li>
-                <li><a href="#">About</a></li>
+                <li><a class = "active" href="/">Home</a></li>
+                <li><a  href="/demo">Demo</a></li>
+                <li><a href="/about">About</a></li>
             </ul>
         </nav>
     </header>
@@ -36,23 +32,20 @@
     <div class="containerHome">
         <section class="contentHomeHead">
             <div class="contentHead">
-                <h1>Open Democracy</h1>
-                <br />
-                    <p> 
-                        Lorem Ipsum is simply dummy text of the printing
-                        and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the
-                        1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book.
-                        It has survived not only five centuries, but also
-                        
-                    </p>
-                    <br />
-                    <button class="moreInfoButton">More info</button>
-                    <button class="viewDemoButton">View Demo</button>
+                <div id="textHead">
+                    <h1>Open Democracy</h1>
+                        <p> 
+                            We are the first free platform to interactively visualize complex data for electoral purposes and designed to facilitate data analysis. 
+                            Through data we empower citizens, organized groups and parties to be more competitive and make our democracy better.
+
+                            
+                        </p>
+                        <a href="#contentHow" class="moreInfoButton">More info</a>
+                        <a href="/demo" class="viewDemoButton">View Demo</a>
+                </div>
             </div>
-            <div class="contentHead">
-                <img class="image2map" src="/home/holberton/Open_Democracy_v1/map/static/images/img-referencia.png" />
+            <div id="imageHead" class="contentHead">
+                <img id="mapGif"  src="../static/images/maps.gif" />
             </div>
             
         </section>
@@ -60,7 +53,7 @@
     </div>
 
     <div class="containerHomeHow">
-        <section class="contentHow">
+        <section id="contentHow" class="contentHow">
             <h1>HOW DOES IT WORK? </h1>
             
         </section>
@@ -68,77 +61,57 @@
 
     <div class="containerFeatures">
         <section class="contentFeat1">
-            <div class="containerFeatures1">
-                <h1><u class="underline">SELECT A </u>CANDIDATE</h1>
+            <div class="containerFeatures1 text">
+                <h1><u class="underline">Select a </u>candidate</h1>
                 <br />
                 <p> 
-                    Lorem Ipsum is simply dummy text of the printing
-                    and typesetting industry. Lorem Ipsum has been
-                    the industry's standard dummy text ever since the
-                    1500s, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also
+                    Unleash Open Democracy’s data visualization capacities to understand the 2019 electoral process results in Cali, Colombia. Very soon you will find a lot more datasets of other elections and cities.
                     
                 </p>
             </div>
             <div class="containerFeatures1">
-                <img class="image2map" src="/home/holberton/Open_Democracy_v1/map/static/images/img-referencia.png" />
+                <img class="image2map" src="../static/images/map-function-1.jpg" />
             </div>
         </section>
         <section class="contentFeat2">
             
             <div  class="containerFeatures2">
-                <img class="image1map" src="/home/holberton/Open_Democracy_v1/map/static/images/img-referencia.png" />
+                <img class="image1map" src="../static/images/map-function-2.jpg" />
             </div>
-            <div  class="containerFeatures2">
-                <h1><u class="underline">HOVER ON EA</u>CH POINT</h1>
+            <div  class="containerFeatures2 text">
+                <h1><u class="underline">Navigate the</u> polling places</h1>
                 <br />
                 <p> 
-                    Lorem Ipsum is simply dummy text of the printing
-                    and typesetting industry. Lorem Ipsum has been
-                    the industry's standard dummy text ever since the
-                    1500s, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also
+                    Hover the different points to get information about the total amount of ballots in favor of the candidate, the polling place name and more. Points size and colour hint you about how good the result was.
                     
                 </p>
             </div>
            
         </section>
         <section class="contentFeat1">
-            <div  class="containerFeatures1">
-                <h1><u class="underline">SELECT ANO</u>THER OPTION</h1>
+            <div  class="containerFeatures1 text">
+                <h1><u class="underline">Navigate the</u> polling votes by comunas</h1>
                 <br />
                 <p> 
-                    Lorem Ipsum is simply dummy text of the printing
-                    and typesetting industry. Lorem Ipsum has been
-                    the industry's standard dummy text ever since the
-                    1500s, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also
+                    Hover the different points to get information about the total amount of ballots in favor of the candidate, the polling place name and more. Points size and colour hint you about how good the result was.
                     
                 </p>
             </div>
             <div  class="containerFeatures1">
-                <img class="image2map" src="/home/holberton/Open_Democracy_v1/map/static/images/img-referencia.png" />
+                <img class="image2map" src="../static/images/map-function-3.jpg" />
             </div>
         </section>
         <section class="contentFeat2">
             
             <div  class="containerFeatures2">
-                <img class="image1map" src="/home/holberton/Open_Democracy_v1/map/static/images/img-referencia.png" />
+                <img class="image1map" src="../static/images/map-function-4.jpg" />
             </div>
 
-            <div  class="containerFeatures2">
-                <h1><u class="underline">SEE ALL </u>LAYERS </h1>
+            <div  class="containerFeatures2 text">
+                <h1><u class="underline">Enable and</u> disable the layers</h1>
                 <br />
                 <p> 
-                    Lorem Ipsum is simply dummy text of the printing
-                    and typesetting industry. Lorem Ipsum has been
-                    the industry's standard dummy text ever since the
-                    1500s, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also
+                    Data is more valuable when you put it in context. Open Democracy’s layer features put together complex information for you to have a better understanding of the electoral process.
                     
                 </p>
             </div>
@@ -149,9 +122,11 @@
 
     <div class="overlay"></div>
 
-    <script src="../static/js/app.js" type="module"></script>
+   
 </body>
 <footer class="myfeet">
     <p>copyright @ Open Democracy. All rights reserved</p>
 </footer>
+
+<script src="../static/js/interactive.js"></script>
 </html>

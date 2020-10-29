@@ -28,15 +28,15 @@ const images = [
   },
   {
     name: 'Francined de Jesus Cano Ramirez',
-    url: '../static/images/francined.jpg'
+    url: '../static/images/francined.jpeg'
   },
   {
     name: 'Fernando Toloza Colorado',
-    url: '../static/images/tolosa.jpg'
+    url: '../static/images/tolosa.jpeg'
   },
   {
     name: 'Danis Antonio Renteria Chala',
-    url: '../static/images/danis.jpg'
+    url: '../static/images/danis.jpeg'
   },
   {
     name: 'Voto en Blanco ',
@@ -44,7 +44,7 @@ const images = [
   },
   {
     name: 'Voto Nulo ',
-    url: '../static/images/nulo.jpg'
+    url: '../static/images/nulo.jpeg'
   },
   {
     name: 'Voto No Marcado ',
