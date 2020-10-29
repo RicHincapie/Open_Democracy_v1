@@ -202,6 +202,13 @@ Bring results by comunas with a candidate_id:
 
 The project is intended to be deployed on three servers. A Load Balancer to distribute the connections to two servers, each with its own database. Working as master and slave respectively.
 
+## ScreenShots
+
+![Captura de pantalla 2020-10-26 a la(s) 11 09 31 a  m](https://user-images.githubusercontent.com/54350108/97539059-60347380-198f-11eb-9919-062db983d621.png)
+![Captura de pantalla 2020-10-26 a la(s) 11 08 53 a  m](https://user-images.githubusercontent.com/54350108/97539064-6165a080-198f-11eb-8295-5ed2099305a2.png)
+![Captura de pantalla 2020-10-26 a la(s) 11 08 38 a  m](https://user-images.githubusercontent.com/54350108/97539066-61fe3700-198f-11eb-86c2-bab4575feb14.png)
+![Captura de pantalla 2020-10-26 a la(s) 10 58 03 a  m](https://user-images.githubusercontent.com/54350108/97539068-6296cd80-198f-11eb-8553-7fadcca6e3e4.png)
+
 
 ## Build with 🛠️
 
