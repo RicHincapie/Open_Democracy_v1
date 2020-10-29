@@ -11,7 +11,7 @@ const {
 let num = 0, numComun = 1;
 const URL = '../static/js/votosTotales.json';
 // const init_url = 'http://0.0.0.0:5005/api/v1/candidates_all';
-const URL_PLACES = 'http://0.0.0.0:5005/api/v1/'/*'https://opendemocracy.digital/api/v1/'*/;
+const URL_PLACES = 'https://opendemocracy.digital/api/v1/'/*'http://0.0.0.0:5005/api/v1/'*/;
 let {layer, layer2, layer3, layer4} = {};
 let chekedPlace = true;
 let chekedComuna = false;
@@ -118,7 +118,7 @@ function init (map) {
       const id = select.options[select.selectedIndex].getAttribute('data-id');
       const urlComunas = `https://opendemocracy.digital/api/v1/resultado/comunas/${id}`;
       const temp = `http://0.0.0.0:5005/api/v1/resultado/comunas/${id}`;
-      getData(temp)
+      getData(urlComunas)
       .then(data => {
         new_data = normalizeDataCloropleth(data);
         layer4.hide();
@@ -157,7 +157,7 @@ function init (map) {
       const id = select.options[select.selectedIndex].getAttribute('data-id')
       const urlComunas = `https://opendemocracy.digital/api/v1/resultado/comunas/${id}`
       const temp = `http://0.0.0.0:5005/api/v1/resultado/comunas/${id}`;
-      getData(temp)
+      getData(urlComunas)
       .then(data => {
         numComun++;
         new_data = normalizeDataCloropleth(data)
