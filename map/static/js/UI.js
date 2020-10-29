@@ -24,31 +24,31 @@ const images = [
   },
   {
     name: 'Gustavo Adolfo Prado Cardona',
-    url: '../static/images/jorge-ospina.jpg'
+    url: '../static/images/gustavo-cardona.jpeg '
   },
   {
     name: 'Francined de Jesus Cano Ramirez',
-    url: '../static/images/roberto-ortiz.jpg'
+    url: '../static/images/francined.jpg'
   },
   {
     name: 'Fernando Toloza Colorado',
-    url: '../static/images/alejandro-eder.jpg'
+    url: '../static/images/tolosa.jpg'
   },
   {
     name: 'Danis Antonio Renteria Chala',
-    url: '../static/images/michel-maya.jpg'
+    url: '../static/images/danis.jpg'
   },
   {
     name: 'Voto en Blanco ',
-    url: '../static/images/roberto-ortiz.jpg'
+    url: '../static/images/voto_blanco.jpeg'
   },
   {
     name: 'Voto Nulo ',
-    url: '../static/images/alejandro-eder.jpg'
+    url: '../static/images/nulo.jpg'
   },
   {
     name: 'Voto No Marcado ',
-    url: '../static/images/michel-maya.jpg'
+    url: '../static/images/no-marcado.png'
   }
 ];
 export default class UI {
