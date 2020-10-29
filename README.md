@@ -165,8 +165,6 @@ Run the Web:
 `ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=0.0.0.0 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=6005 python3 -m map.index`
 
 
-
-
 ## Running the tests ⚙️
 
 After starting the flask server, we can make the calls to the api routes.
@@ -195,7 +193,6 @@ Bring results by puesto with a candidate_id:
 Bring results by comunas with a candidate_id:
 
 `curl -X GET http://0.0.0.0:5005/api/v1/resultado/comunas/<int>` 
-
 
 
 ## Deploy 📦
