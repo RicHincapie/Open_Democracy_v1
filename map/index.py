@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+from os import environ
+
+
 """ Starts a Flash Open Democracy """
 from flask import Flask, render_template
 app = Flask(__name__)
@@ -9,4 +12,10 @@ def hbnb():
 
 if __name__ == "__main__":
     """ Main Function """
-    app.run(host='0.0.0.0', port=5002, debug=True)
+    host = environ.get('ODEM_API_HOST')
+    port = environ.get('ODEM_API_PORT')
+    if not host:
+        host = '0.0.0.0'
+    if not port:
+        port = '6005'
+    app.run(host=host, port=port, threaded=True, debug=False)

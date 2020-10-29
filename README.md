@@ -124,6 +124,29 @@ MySQL
 
 ### Installation 🔧
 
+Add a file called opendemocracy to the / etc / nginx / sites-available directory with the following configuration for our application:
+
+`server {
+        listen 80;
+
+        server_name 0.0.0.0;
+
+        location /api/v1 {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5005;
+        }
+
+        location /demo {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:6005;
+        }
+        location /static {
+                alias /home/ubuntu/Open_Democracy_v1/map/static;
+        }
+add_header X-Served-By '1516-web-01';
+        listen [::]:80 default_server;
+}`
+
 
 First we need to start the flask application:
 
@@ -133,10 +156,13 @@ API INSTRUCTIONS
 In Open Democracy path, Copy and paste the below code. Please note that the port 5005 must be free
 and that you are executing it from the Open_Democracy_1 directory. 
 
-For user database:
+Run the api:
 
 `ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=0.0.0.0 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app`
 
+Run the Web:
+
+`ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=0.0.0.0 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=6005 python3 -m map.index`
 
 
 ## Running the tests ⚙️
@@ -172,6 +198,13 @@ Bring results by comunas with a candidate_id:
 ## Deploy 📦
 
 The project is intended to be deployed on three servers. A Load Balancer to distribute the connections to two servers, each with its own database. Working as master and slave respectively.
+
+## ScreenShots
+
+![Captura de pantalla 2020-10-26 a la(s) 11 09 31 a  m](https://user-images.githubusercontent.com/54350108/97539059-60347380-198f-11eb-9919-062db983d621.png)
+![Captura de pantalla 2020-10-26 a la(s) 11 08 53 a  m](https://user-images.githubusercontent.com/54350108/97539064-6165a080-198f-11eb-8295-5ed2099305a2.png)
+![Captura de pantalla 2020-10-26 a la(s) 11 08 38 a  m](https://user-images.githubusercontent.com/54350108/97539066-61fe3700-198f-11eb-86c2-bab4575feb14.png)
+![Captura de pantalla 2020-10-26 a la(s) 10 58 03 a  m](https://user-images.githubusercontent.com/54350108/97539068-6296cd80-198f-11eb-8553-7fadcca6e3e4.png)
 
 
 ## Build with 🛠️
