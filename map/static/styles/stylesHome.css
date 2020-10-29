@@ -190,6 +190,9 @@ div.containerFeatures2{
     flex-direction: column;
     justify-content: center;
 }
+.containerFeatures1.text h1, .containerFeatures2.text h1{
+    text-transform: uppercase;
+}
 div.containerFeatures1 p {
     text-align: justify;
     width: 100%;
