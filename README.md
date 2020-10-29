@@ -76,10 +76,10 @@ Look **Deployment** for project deploy.
 
     `pip3 install flask_cors`
 
+
 - Nginx is a lightweight, high-performance reverse proxy / web server and proxy for email protocols (IMAP / POP3):
 
     `sudo apt install nginx`
-    
 
     The firewall software must be configured to allow access to the service. Nginx registers itself as a service with ufw upon installation, making allowing Nginx access easy:
 
@@ -89,10 +89,38 @@ Look **Deployment** for project deploy.
 
     `sudo ufw allow 'Nginx Full'`
 
+MySQL
+ 
+- Step 1 - Install MySQL
 
-```
-Ejemplo
-```
+    `sudo apt install -y mysql-server`
+
+- Step 2 - Configure MySQL - Run the security script:
+
+    `sudo mysql_secure_installation`
+
+    The next prompt will be to set a password for the MySQL root user. Enter and then confirm a strong password of your choice.
+    From this point, you can press Y and then ENTER to accept the default settings for all subsequent questions. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MySQL will honor the changes you have made immediately.
+
+    
+    You can run the script <setup_1.sql> to prepare the database:
+    
+    `cat setup_1.sql | mysql -hlocalhost -uroot -p`
+
+    If you have problems with validate_password, just add the following settings to the file:
+
+    `cd /etc/mysql/mysql.conf.d` 
+    `sudo vim mysqld.cnf`
+
+    `validate_password.check_user_name=OFF`
+    `validate_password.dictionary_file=`
+    `validate_password.length=0`
+    `validate_password.mixed_case_count=0`
+    `validate_password.number_count=0`
+    `validate_password.policy=LOW`
+    `validate_password.special_char_count=0`
+
+
 
 ### Installation 🔧
 
@@ -105,16 +133,11 @@ API INSTRUCTIONS
 In Open Democracy path, Copy and paste the below code. Please note that the port 5005 must be free
 and that you are executing it from the Open_Democracy_1 directory. 
 
-For development database:
-
-`ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app`
-
 For user database:
 
-`ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=34.75.248.42 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app`
+`ODEM_MYSQL_USER=odem_usr ODEM_MYSQL_PWD=odem_usr ODEM_MYSQL_HOST=0.0.0.0 ODEM_MYSQL_DB=odem_dev_db ODEM_TYPE_STORAGE=db ODEM_API_HOST=0.0.0.0 ODEM_API_PORT=5005 python3 -m api.v1.app`
 
 
-_Finalizamos con un ejemplo de cómo obtener datos de la API o como usarlos para una pequeña demo_
 
 ## Running the tests ⚙️
 
