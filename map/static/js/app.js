@@ -252,9 +252,8 @@ function printMapComunasVotes (data, map, num, layerplace) {
 function createLayers() {
   const source1 = new carto.source.GeoJSON(com);
   const viz = new carto.Viz(`
-   color: opacity(yellow, 0.2)
+   color: opacity(yellow, 0)
    strokeColor: black
-   style: ramp(linear($votos,10),[#FC4E2A, #FFFFB2, #FEB24C, #FD8D3C, #B10026])
   `);
   layer = new carto.Layer('comunas', source1, viz);
 
