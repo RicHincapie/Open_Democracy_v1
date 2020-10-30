@@ -110,10 +110,11 @@ function init (map) {
       if (chekedPlace){
         new_data = normalizeData(data)
         num++;
-        console.log(`init puestos${num}`)
+        layer2.hide();
         layer2.remove();
         layer2 = printMap(new_data, map, num, layer2);
         layer2.addTo(map);
+        layer2.show();
       }
     })
     if (chekedComuna) {
