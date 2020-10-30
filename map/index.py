@@ -14,6 +14,10 @@ def hbnb():
 def index():
     return render_template('landing.html')
 
+@app.route('/home', strict_slashes=False)
+def index():
+    return render_template('landing.html')
+
 @app.route('/about', strict_slashes=False)
 def about():
     return render_template('about.html')
