@@ -10,6 +10,14 @@ app = Flask(__name__)
 def hbnb():
     return render_template('index.html')
 
+@app.route('/', strict_slashes=False)
+def index():
+    return render_template('landing.html')
+
+@app.route('/about', strict_slashes=False)
+def about():
+    return render_template('about.html')
+
 if __name__ == "__main__":
     """ Main Function """
     host = environ.get('ODEM_API_HOST')

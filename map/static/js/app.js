@@ -11,7 +11,7 @@ const {
 let num = 0, numComun = 1;
 const URL = '../static/js/votosTotales.json';
 // const init_url = 'http://0.0.0.0:5005/api/v1/candidates_all';
-const URL_PLACES = 'http://0.0.0.0:6005/api/v1/'/*'https://opendemocracy.digital/api/v1/'*/;
+const URL_PLACES = 'https://opendemocracy.digital/api/v1/'/*'http://0.0.0.0:5005/api/v1/'*/;
 let {layer, layer2, layer3, layer4} = {};
 let chekedPlace = true;
 let chekedComuna = false;
@@ -109,6 +109,7 @@ function init (map) {
         new_data = normalizeData(data)
         num++;
         console.log(`init puestos${num}`)
+        layer2.remove();
         layer2 = printMap(new_data, map, num, layer2);
         layer2.addTo(map);
       }
@@ -116,8 +117,8 @@ function init (map) {
     if (chekedComuna) {
       const id = select.options[select.selectedIndex].getAttribute('data-id');
       const urlComunas = `https://opendemocracy.digital/api/v1/resultado/comunas/${id}`;
-      const temp = `http://0.0.0.0:6005/api/v1/resultado/comunas/${id}`;
-      getData(temp)
+      const temp = `http://0.0.0.0:5005/api/v1/resultado/comunas/${id}`;
+      getData(urlComunas)
       .then(data => {
         new_data = normalizeDataCloropleth(data);
         layer4.hide();
@@ -155,8 +156,8 @@ function init (map) {
       console.log('checked');
       const id = select.options[select.selectedIndex].getAttribute('data-id')
       const urlComunas = `https://opendemocracy.digital/api/v1/resultado/comunas/${id}`
-      const temp = `http://0.0.0.0:6005/api/v1/resultado/comunas/${id}`;
-      getData(temp)
+      const temp = `http://0.0.0.0:5005/api/v1/resultado/comunas/${id}`;
+      getData(urlComunas)
       .then(data => {
         numComun++;
         new_data = normalizeDataCloropleth(data)
@@ -204,14 +205,14 @@ function init (map) {
 */
 
 function printMap (data, map, num, layerplace) {
-  layerplace.hide();
+  //layerplace.hide();
   const sourcePlace = new carto.source.GeoJSON(data);
   const vizPlace = new carto.Viz(`
     @nombre_puesto: $nombre_puesto  
     @votos: $votos
-    @style: ramp(linear($votos,1,2500),[#311B92, #f35a27])
-    width: 10
+    @style: ramp(linear($votos,$carto_index_low,$carto_index_high),[#311B92, #f35a27])
     color: opacity(@style, 0.9)
+    width: $carto_index
     strokeWidth: 0.5
     strokeColor: opacity(@style, 0.4)
   `);
@@ -229,8 +230,8 @@ function printMap (data, map, num, layerplace) {
 */
 function printMapComunasVotes (data, map, num, layerplace) {
   
-  const sourceCominaCloro = new carto.source.GeoJSON(data);
-    const vizCominaCloro = new carto.Viz(`
+  const sourceComunaCloro = new carto.source.GeoJSON(data);
+    const vizComunaCloro = new carto.Viz(`
       @nombre: $nombre
       @votos: $votos
       @comuna: $comuna
@@ -239,7 +240,7 @@ function printMapComunasVotes (data, map, num, layerplace) {
       @style: ramp(linear($votos,$carto_index_low,$carto_index_high),[#221f59, #f35a27, #FFB300])
       color: opacity(@style, 0.8)
       `);
-    layerplace = new carto.Layer(`ComunaVotos${num}`, sourceCominaCloro, vizCominaCloro);
+    layerplace = new carto.Layer(`ComunaVotos${num}`, sourceComunaCloro, vizComunaCloro);
   
   createInteractivityComuna(layerplace, map);
   
