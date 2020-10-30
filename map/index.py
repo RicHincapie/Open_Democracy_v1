@@ -15,7 +15,7 @@ def index():
     return render_template('landing.html')
 
 @app.route('/home', strict_slashes=False)
-def index():
+def home():
     return render_template('landing.html')
 
 @app.route('/about', strict_slashes=False)
