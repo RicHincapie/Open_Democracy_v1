@@ -65,9 +65,11 @@ function init (map) {
     // a dictionary with point coordinates, candidate name
     // and number of votes, between other data.  
     const urlFinal = `${URL_PLACES}${id}`;
+    console.log(urlFinal);
     getData(urlFinal)
     .then(data => {
     new_data = normalizeData(data);
+    
     
     // This call is for the page first load
     const sourcePlace = new carto.source.GeoJSON(new_data);
@@ -237,7 +239,7 @@ function printMapComunasVotes (data, map, num, layerplace) {
       @comuna: $comuna
       strokeColor: black
       width: 20
-      @style: ramp(linear($votos,$carto_index_low,$carto_index_high),[#221f59, #f35a27, #FFB300])
+      @style: ramp(linear($votos,$carto_index_low,$carto_index_high),[#ecda9a,#efc47e,#f3ad6a,#f7945d,#f97b57,#f66356,#ee4d5a])
       color: opacity(@style, 0.8)
       `);
     layerplace = new carto.Layer(`ComunaVotos${num}`, sourceComunaCloro, vizComunaCloro);
@@ -283,7 +285,7 @@ function createInteractivity(layer, map){
     const coords = featureEvent.coordinates;
     const html = `
               <div id='popUp'>
-                <h3 class ="h4">votos por comuna: </h3>
+                <h3 class ="h4">votos por puesto de votación: </h3>
                 <h3 class ="open-sans">${feature.variables.nombre_puesto.value}</h3>
                 <p class="description open-sans">votos obtenidos: <br> ${feature.variables.votos.value}</h3>
             </div>
